@@ -50,7 +50,8 @@
       "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -q -m 'Workouts: per-exercise progress chart \\(total volume over time\\) *)",
       "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -aqm 'Update CLAUDE.md status with Workouts enhancements *)",
       "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm run build 2>&1 | Select-String -Pattern \"error TS|PARSE_ERROR|✓ built|Build failed|error during\" | Select-Object -First 15)",
-      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -q -m 'Voice assistant foundation \\(Phase 1, Workouts\\) *)"
+      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -q -m 'Voice assistant foundation \\(Phase 1, Workouts\\) *)",
+      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -aqm 'Document voice assistant \\(Phase 1\\) + Phase 2 plan in CLAUDE.md *)"
     ]
   }
 }

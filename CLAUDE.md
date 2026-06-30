@@ -129,6 +129,23 @@ External services this app connects to:
   total volume over time, Month/3-Month/All zoom, tap-a-point day detail. Note:
   keep repo side-effects OUT of setState updaters (StrictMode double-invokes them).
 
+## Voice assistant (Phase 1 built & verified, Workouts-scoped)
+- **Goal:** a mic widget — tap, say "Hey <name>, …" — that understands a request,
+  performs the action, and replies aloud in a character voice. Cross-cutting
+  (every section gets its own personas).
+- **Built (`src/features/voice/`):** floating mic widget + typed-command fallback;
+  persona registry (per-section named characters w/ personality + voice hints);
+  browser Web Speech API for STT + TTS (free, no cloud); a simple deterministic
+  command reader that handles "add <exercise>" today. Wired into Workouts via
+  `logExercise()` on `useWorkouts`. Verified end-to-end via the typed path.
+- **Phase 2 (needs Supabase):** replace the simple reader with the Claude API
+  (natural-language → actions) behind the same `interpret()` seam, and upgrade TTS
+  to an expressive provider. Both need secret keys → server-side (Edge Functions).
+- **Voice-cloning decision (LOCKED):** personas are ORIGINAL *style* voices (e.g.
+  an Austrian-accented coach), NOT clones of real people. Quality TTS providers
+  forbid cloning real voices without consent; we evoke the vibe instead. User is
+  aware and on board. Do not build actual real-person voice clones.
+
 ## Auth (in progress)
 - **Auth method chosen: device passkeys** (WebAuthn — Face ID / fingerprint /
   Windows Hello). Note: Supabase has no built-in passkey provider; it needs a
