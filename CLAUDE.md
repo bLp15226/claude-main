@@ -123,6 +123,11 @@ External services this app connects to:
   Verified end-to-end in-browser incl. reload persistence. NOTE: user is on the
   FREE Hevy tier — Hevy's API key needs Pro, so live sync is optional/later; the
   free path is a one-time "import my Hevy export" feature (not yet built).
+  Enhancements added: collapsible workout cards (newest open); "Repeat workout"
+  (duplicate a session with last time's numbers); per-exercise progress chart
+  (`progress.ts` + `ProgressChart.tsx` + `ProgressPanel.tsx`) — custom SVG line of
+  total volume over time, Month/3-Month/All zoom, tap-a-point day detail. Note:
+  keep repo side-effects OUT of setState updaters (StrictMode double-invokes them).
 
 ## Auth (in progress)
 - **Auth method chosen: device passkeys** (WebAuthn — Face ID / fingerprint /
