@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { Plus, Trash2 } from 'lucide-react'
+import { ChevronDown, ChevronRight, Plus, Trash2 } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { ExerciseBlock } from './ExerciseBlock'
 import {
@@ -14,6 +14,8 @@ interface WorkoutCardProps {
   workout: Workout
   /** Previously-used exercise names, offered as autocomplete suggestions. */
   exerciseSuggestions: string[]
+  /** Whether the card starts expanded (newest workout does; older collapse). */
+  defaultExpanded?: boolean
   onRemove: () => void
   onAddExercise: (name: string) => void
   onRemoveExercise: (exerciseId: string) => void
@@ -35,6 +37,7 @@ const DATE_FMT: Intl.DateTimeFormatOptions = {
 export function WorkoutCard({
   workout,
   exerciseSuggestions,
+  defaultExpanded = true,
   onRemove,
   onAddExercise,
   onRemoveExercise,
@@ -43,6 +46,7 @@ export function WorkoutCard({
   onRemoveSet,
 }: WorkoutCardProps) {
   const [exerciseName, setExerciseName] = useState('')
+  const [expanded, setExpanded] = useState(defaultExpanded)
 
   const volume = workoutVolume(workout)
   const sets = workoutSetCount(workout)
@@ -64,13 +68,31 @@ export function WorkoutCard({
   return (
     <section className="rounded-xl border border-border bg-card">
       {/* Header */}
-      <header className="flex items-start justify-between gap-3 border-b border-border/60 px-5 py-4">
-        <div>
-          <h2 className="font-serif text-xl font-medium tracking-wide">
-            {workout.title}
-          </h2>
-          <p className="mt-0.5 text-xs text-muted-foreground/70">{date}</p>
-        </div>
+      <header
+        className={`flex items-start justify-between gap-3 px-5 py-4 ${
+          expanded ? 'border-b border-border/60' : ''
+        }`}
+      >
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+          className="flex items-start gap-2 text-left"
+        >
+          {expanded ? (
+            <ChevronDown className="mt-1 size-4 shrink-0 text-muted-foreground/50" />
+          ) : (
+            <ChevronRight className="mt-1 size-4 shrink-0 text-muted-foreground/50" />
+          )}
+          <span>
+            <span className="block font-serif text-xl font-medium tracking-wide">
+              {workout.title}
+            </span>
+            <span className="mt-0.5 block text-xs text-muted-foreground/70">
+              {date}
+            </span>
+          </span>
+        </button>
         <div className="flex items-center gap-4">
           {sets > 0 && (
             <div className="text-right">
@@ -94,6 +116,7 @@ export function WorkoutCard({
       </header>
 
       {/* Exercises */}
+      {expanded && (
       <div className="space-y-3 px-5 py-4">
         {workout.exercises.map((exercise) => (
           <ExerciseBlock
@@ -134,6 +157,7 @@ export function WorkoutCard({
           </button>
         </form>
       </div>
+      )}
     </section>
   )
 }

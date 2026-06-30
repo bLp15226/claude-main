@@ -76,11 +76,12 @@ export function WorkoutsPage() {
             </p>
           </div>
         ) : (
-          workouts.map((workout) => (
+          workouts.map((workout, index) => (
             <WorkoutCard
               key={workout.id}
               workout={workout}
               exerciseSuggestions={exerciseSuggestions}
+              defaultExpanded={index === 0}
               onRemove={() => removeWorkout(workout.id)}
               onAddExercise={(name) => addExercise(workout.id, name)}
               onRemoveExercise={(exerciseId) =>

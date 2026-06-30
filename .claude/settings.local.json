@@ -41,7 +41,9 @@
       "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('.claude/settings.json','utf8'\\)\\); console.log\\('valid JSON ✓'\\)\")",
       "PowerShell(try { Get-Content \".claude/settings.json\" -Raw | ConvertFrom-Json -ErrorAction Stop | Out-Null; \"valid JSON \\(ok\\)\" } catch { \"INVALID: $_\" })",
       "Bash(git -c user.name=\"blpinc\" -c user.email=\"blpinc@live.com\" add -A)",
-      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -q -m 'Add Workouts section: manual offline-first logger *)"
+      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -q -m 'Add Workouts section: manual offline-first logger *)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm run build 2>&1 | Select-String -Pattern \"error|Error|✓ built|PARSE\" | Select-Object -First 15)",
+      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -q -m 'Workouts: collapsible workout cards *)"
     ]
   }
 }
