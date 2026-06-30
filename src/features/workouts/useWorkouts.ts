@@ -108,6 +108,44 @@ export function useWorkouts() {
     [commit],
   )
 
+  // Voice/quick-log primitive: ensure there's a workout for today, then add the
+  // named exercise (reusing it if already present) with one fresh set. Returns
+  // nothing — it just lands the change, like the other actions.
+  const logExercise = useCallback(
+    (name: string) => {
+      const today = new Date().toISOString().slice(0, 10)
+      const list = ref.current
+      const head = list[0]
+      const useHead = head && head.performed_at.slice(0, 10) === today
+
+      const target: Workout = useHead
+        ? head
+        : {
+            id: crypto.randomUUID(),
+            title: 'Workout',
+            performed_at: new Date().toISOString(),
+            exercises: [],
+          }
+
+      const existing = target.exercises.find(
+        (e) => e.name.toLowerCase() === name.toLowerCase(),
+      )
+      const exercises = existing
+        ? target.exercises.map((e) =>
+            e === existing ? { ...e, sets: [...e.sets, nextSet(e.sets)] } : e,
+          )
+        : [...target.exercises, { id: crypto.randomUUID(), name, sets: [nextSet([])] }]
+
+      const updated: Workout = { ...target, exercises }
+      const next = useHead
+        ? list.map((w) => (w.id === updated.id ? updated : w))
+        : [updated, ...list]
+      commit(next)
+      void workoutRepo.save(updated)
+    },
+    [commit],
+  )
+
   const addExercise = useCallback(
     (workoutId: string, name: string) => {
       const exercise: Exercise = {
@@ -189,6 +227,7 @@ export function useWorkouts() {
     addWorkout,
     removeWorkout,
     duplicateWorkout,
+    logExercise,
     addExercise,
     removeExercise,
     addSet,

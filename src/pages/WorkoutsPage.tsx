@@ -4,6 +4,10 @@ import { sections } from '@/config/sections'
 import { NewWorkoutForm } from '@/features/workouts/NewWorkoutForm'
 import { ProgressPanel } from '@/features/workouts/ProgressPanel'
 import { WorkoutCard } from '@/features/workouts/WorkoutCard'
+import { VoiceAssistant } from '@/features/voice/VoiceAssistant'
+import { personasForSection } from '@/features/voice/personas'
+import { interpret } from '@/features/voice/commands'
+import type { Persona } from '@/features/voice/personas'
 import { useWorkouts } from '@/features/workouts/useWorkouts'
 import { usingHevy } from '@/features/workouts/repo'
 import { WEIGHT_UNIT, workoutVolume } from '@/features/workouts/types'
@@ -17,6 +21,7 @@ export function WorkoutsPage() {
     addWorkout,
     removeWorkout,
     duplicateWorkout,
+    logExercise,
     addExercise,
     removeExercise,
     addSet,
@@ -39,6 +44,15 @@ export function WorkoutsPage() {
     () => workouts.reduce((sum, w) => sum + workoutVolume(w), 0),
     [workouts],
   )
+
+  // Voice assistant (Phase 1): the simple command reader runs the action and
+  // returns the persona's spoken reply.
+  const personas = personasForSection('/workouts')
+  const handleVoice = (text: string, persona: Persona): string => {
+    const cmd = interpret(text, persona)
+    if (cmd.kind === 'add_exercise') logExercise(cmd.exercise)
+    return cmd.reply
+  }
 
   return (
     <div>
@@ -114,6 +128,10 @@ export function WorkoutsPage() {
             ? 'Synced with Hevy.'
             : 'Saved on this device. Hevy sync lights up once your API key is connected.'}
         </p>
+      )}
+
+      {personas.length > 0 && (
+        <VoiceAssistant personas={personas} onCommand={handleVoice} />
       )}
     </div>
   )
