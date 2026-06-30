@@ -32,7 +32,16 @@
       "Bash(git rev-parse *)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(grep -E \"\\(^|/\\)\\\\.env$|node_modules|^dist/\")"
+      "Bash(grep -E \"\\(^|/\\)\\\\.env$|node_modules|^dist/\")",
+      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -q -m 'Initial commit: PWA shell, Groceries slice, auth foundation *)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(cat .claude/settings.json)",
+      "Bash(git check-ignore *)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('.claude/settings.json','utf8'\\)\\); console.log\\('valid JSON ✓'\\)\")",
+      "PowerShell(try { Get-Content \".claude/settings.json\" -Raw | ConvertFrom-Json -ErrorAction Stop | Out-Null; \"valid JSON \\(ok\\)\" } catch { \"INVALID: $_\" })",
+      "Bash(git -c user.name=\"blpinc\" -c user.email=\"blpinc@live.com\" add -A)",
+      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -q -m 'Add Workouts section: manual offline-first logger *)"
     ]
   }
 }

@@ -103,7 +103,10 @@ External services this app connects to:
   rather than building it silently. Keep all personality content good-natured;
   avoid offensive or slur-adjacent material.
 
-## Current status (updated 2026-06-28)
+## Current status (updated 2026-06-30)
+- **Version control set up (2026-06-30)**: git initialized, `.gitignore` already
+  excludes `.env` + secrets. A project allowlist lives in `.claude/settings.json`
+  (file edits / git / npm run without prompts; pushes, deletes, network still ask).
 - **Shell built & working**: React+Vite+TS PWA, Tailwind v4 + shadcn-style
   components, premium black-and-gold theme (Cormorant Garamond / Inter),
   responsive nav (desktop rail + mobile tab bar), four section routes, PWA
@@ -113,6 +116,13 @@ External services this app connects to:
   Swappable data layer (`src/features/groceries/repo.ts`): uses device storage
   now, auto-switches to Supabase when env vars are present. Supabase schema +
   RLS migration and setup steps are in `supabase/` (see its README).
+- **Workouts slice (2nd vertical slice) built & verified** (`src/features/workouts/`):
+  manual logger — start a named workout, add exercises, log sets (weight × reps),
+  with a live volume tally in the Coach voice. Optimistic UI; same swappable repo
+  pattern (device storage now, `hevyRepo` is a marked one-line swap later).
+  Verified end-to-end in-browser incl. reload persistence. NOTE: user is on the
+  FREE Hevy tier — Hevy's API key needs Pro, so live sync is optional/later; the
+  free path is a one-time "import my Hevy export" feature (not yet built).
 
 ## Auth (in progress)
 - **Auth method chosen: device passkeys** (WebAuthn — Face ID / fingerprint /
