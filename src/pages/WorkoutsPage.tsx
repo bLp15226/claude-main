@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { sections } from '@/config/sections'
 import { NewWorkoutForm } from '@/features/workouts/NewWorkoutForm'
+import { ProgressPanel } from '@/features/workouts/ProgressPanel'
 import { WorkoutCard } from '@/features/workouts/WorkoutCard'
 import { useWorkouts } from '@/features/workouts/useWorkouts'
 import { usingHevy } from '@/features/workouts/repo'
@@ -60,6 +61,11 @@ export function WorkoutsPage() {
           {workouts.length === 1 ? 'workout' : 'workouts'}. Keep stacking it.
         </p>
       )}
+
+      {/* Progress chart (renders only once a lift has logged sets) */}
+      <div className="mt-6">
+        <ProgressPanel workouts={workouts} />
+      </div>
 
       {/* List / states */}
       <div className="mt-6 space-y-4">
