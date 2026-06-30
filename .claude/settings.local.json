@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "PowerShell(node --version; npm --version; \\(Get-Command node\\).Source)",
+      "PowerShell($paths = @\\(\"$env:ProgramFiles\\\\nodejs\\\\node.exe\",\"${env:ProgramFiles\\(x86\\)}\\\\nodejs\\\\node.exe\",\"$env:LOCALAPPDATA\\\\Programs\\\\nodejs\\\\node.exe\",\"$env:APPDATA\\\\npm\\\\node.exe\",\"$env:LOCALAPPDATA\\\\fnm_multishells\",\"$env:USERPROFILE\\\\.nvm\",\"$env:USERPROFILE\\\\scoop\\\\apps\\\\nodejs\"\\); foreach \\($p in $paths\\) { if \\(Test-Path $p\\) { \"FOUND: $p\" } else { \"missing: $p\" } }; \"---volta---\"; Test-Path \"$env:USERPROFILE\\\\.volta\\\\bin\\\\node.exe\"; \"---winget---\"; \\(Get-Command winget -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell(winget install OpenJS.NodeJS.LTS --accept-source-agreements --accept-package-agreements --silent)",
+      "PowerShell(winget install OpenJS.NodeJS.LTS --source winget --accept-source-agreements --accept-package-agreements --silent)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); node --version; npm --version; \\(Get-Command node\\).Source)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm install react@latest react-dom@latest react-router-dom@latest class-variance-authority@latest clsx@latest tailwind-merge@latest lucide-react@latest 2>&1 | Select-Object -Last 15)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm install -D vite@latest @vitejs/plugin-react@latest typescript@latest @types/react@latest @types/react-dom@latest @types/node@latest tailwindcss@latest @tailwindcss/vite@latest tw-animate-css@latest vite-plugin-pwa@latest 2>&1 | Select-Object -Last 12)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); $p = Get-Content package.json | ConvertFrom-Json; \"tailwind: \" + $p.devDependencies.tailwindcss; \"vite: \" + $p.devDependencies.vite; \"plugin-react: \" + $p.devDependencies.'@vitejs/plugin-react'; \"pwa: \" + $p.devDependencies.'vite-plugin-pwa'; \"ts: \" + $p.devDependencies.typescript; \"router: \" + $p.dependencies.'react-router-dom')",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); node \"C:\\\\Users\\\\blpin\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-blpin-OneDrive-Desktop-Claude-MD\\\\d401b353-7697-4f8b-9425-1b26e6658230\\\\scratchpad\\\\gen-icons.mjs\" \"C:\\\\Users\\\\blpin\\\\OneDrive\\\\Desktop\\\\Claude.MD\\\\public\")",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm run build 2>&1 | Select-Object -Last 40)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm run dev)",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(Stop-Process -Id 5928 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Process -Id 5928 -ErrorAction SilentlyContinue)",
+      "PowerShell(if \\($?\\) { \"still running\" } else { \"stopped\" })",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm install @supabase/supabase-js@latest 2>&1 | Select-Object -Last 6)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm run build 2>&1 | Select-Object -Last 30)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\blpin\\\\OneDrive\\\\Desktop\\\\Claude.MD\" -File -Force | ForEach-Object { \"{0,9}  {1}\" -f $_.Length, $_.Name })",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); node -e \"const fs=require\\('fs'\\);const b=fs.readFileSync\\('C:/Users/blpin/OneDrive/Desktop/PREMIER_1.png'\\);console.log\\('w',b.readUInt32BE\\(16\\),'h',b.readUInt32BE\\(20\\),'colorType',b[25]\\);\"; echo \"--- installing sharp ---\"; npm install -D sharp@latest 2>&1 | Select-Object -Last 8)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); node \"C:\\\\Users\\\\blpin\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-blpin-OneDrive-Desktop-Claude-MD\\\\d401b353-7697-4f8b-9425-1b26e6658230\\\\scratchpad\\\\analyze.mjs\")",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); node \"C:\\\\Users\\\\blpin\\\\OneDrive\\\\Desktop\\\\Claude.MD\\\\_imgtool.mjs\")",
+      "PowerShell(Remove-Item \"C:\\\\Users\\\\blpin\\\\OneDrive\\\\Desktop\\\\Claude.MD\\\\_imgtool.mjs\" -Force; Remove-Item \"C:\\\\Users\\\\blpin\\\\OneDrive\\\\Desktop\\\\Claude.MD\\\\public\\\\favicon.svg\" -Force; \"cleaned\"; Get-ChildItem \"C:\\\\Users\\\\blpin\\\\OneDrive\\\\Desktop\\\\Claude.MD\\\\public\" | ForEach-Object { \"{0,8}  {1}\" -f $_.Length, $_.Name })",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm run build 2>&1 | Select-Object -Last 20)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm run build 2>&1 | Select-Object -Last 8)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm run build 2>&1 | Select-Object -Last 16)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm install @simplewebauthn/browser@13 2>&1 | Select-Object -Last 6)",
+      "Bash(ls -la .env .env.example)",
+      "Bash(git rev-parse *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(grep -E \"\\(^|/\\)\\\\.env$|node_modules|^dist/\")"
+    ]
+  }
+}
