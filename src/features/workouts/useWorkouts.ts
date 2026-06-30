@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { workoutRepo } from './repo'
 import type { Exercise, Workout, WorkoutSet } from './types'
 
@@ -15,52 +15,98 @@ function nextSet(prev: WorkoutSet[]): WorkoutSet {
 
 /**
  * Loads workouts and exposes mutations. Updates are optimistic: local state
- * changes immediately, then the repo persists in the background. Nested edits
- * (exercises, sets) are expressed as pure updates to a single workout.
+ * changes immediately, then the repo persists in the background.
+ *
+ * Persistence is kept OUT of the setState updater (it lives in `commit`, called
+ * once per action) — React 18 StrictMode invokes updaters twice in dev, so a
+ * save inside one would run twice and, for duplicate, create a phantom copy.
+ * We mirror state in a ref so each action computes the next state synchronously.
  */
 export function useWorkouts() {
   const [workouts, setWorkouts] = useState<Workout[]>([])
   const [loading, setLoading] = useState(true)
+  const ref = useRef<Workout[]>([])
 
   useEffect(() => {
     let active = true
     workoutRepo
       .list()
-      .then((data) => active && setWorkouts(data))
+      .then((data) => {
+        if (!active) return
+        ref.current = data
+        setWorkouts(data)
+      })
       .finally(() => active && setLoading(false))
     return () => {
       active = false
     }
   }, [])
 
-  // Apply a pure update to one workout: optimistic state + persist the result.
+  // Single place that updates both the ref mirror and React state.
+  const commit = useCallback((next: Workout[]) => {
+    ref.current = next
+    setWorkouts(next)
+  }, [])
+
+  // Apply a pure update to one workout, then persist just that workout.
   const mutate = useCallback(
     (id: string, fn: (workout: Workout) => Workout) => {
-      setWorkouts((prev) => {
-        const next = prev.map((w) => (w.id === id ? fn(w) : w))
-        const changed = next.find((w) => w.id === id)
-        if (changed) void workoutRepo.save(changed)
-        return next
-      })
+      const next = ref.current.map((w) => (w.id === id ? fn(w) : w))
+      commit(next)
+      const changed = next.find((w) => w.id === id)
+      if (changed) void workoutRepo.save(changed)
     },
-    [],
+    [commit],
   )
 
-  const addWorkout = useCallback((title: string) => {
-    const workout: Workout = {
-      id: crypto.randomUUID(),
-      title: title.trim() || 'Workout',
-      performed_at: new Date().toISOString(),
-      exercises: [],
-    }
-    setWorkouts((prev) => [workout, ...prev])
-    void workoutRepo.save(workout)
-  }, [])
+  const addWorkout = useCallback(
+    (title: string) => {
+      const workout: Workout = {
+        id: crypto.randomUUID(),
+        title: title.trim() || 'Workout',
+        performed_at: new Date().toISOString(),
+        exercises: [],
+      }
+      commit([workout, ...ref.current])
+      void workoutRepo.save(workout)
+    },
+    [commit],
+  )
 
-  const removeWorkout = useCallback((id: string) => {
-    setWorkouts((prev) => prev.filter((w) => w.id !== id))
-    void workoutRepo.remove(id)
-  }, [])
+  const removeWorkout = useCallback(
+    (id: string) => {
+      commit(ref.current.filter((w) => w.id !== id))
+      void workoutRepo.remove(id)
+    },
+    [commit],
+  )
+
+  // Start a fresh workout from a past one: same exercises, with last time's
+  // weights/reps copied in as a starting point (targets to beat). New ids
+  // throughout so the original stays untouched.
+  const duplicateWorkout = useCallback(
+    (id: string) => {
+      const source = ref.current.find((w) => w.id === id)
+      if (!source) return
+      const copy: Workout = {
+        id: crypto.randomUUID(),
+        title: source.title,
+        performed_at: new Date().toISOString(),
+        exercises: source.exercises.map((e) => ({
+          id: crypto.randomUUID(),
+          name: e.name,
+          sets: e.sets.map((s) => ({
+            id: crypto.randomUUID(),
+            weight: s.weight,
+            reps: s.reps,
+          })),
+        })),
+      }
+      commit([copy, ...ref.current])
+      void workoutRepo.save(copy)
+    },
+    [commit],
+  )
 
   const addExercise = useCallback(
     (workoutId: string, name: string) => {
@@ -142,6 +188,7 @@ export function useWorkouts() {
     loading,
     addWorkout,
     removeWorkout,
+    duplicateWorkout,
     addExercise,
     removeExercise,
     addSet,

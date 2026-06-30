@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { ChevronDown, ChevronRight, Plus, Trash2 } from 'lucide-react'
+import { ChevronDown, ChevronRight, Copy, Plus, Trash2 } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { ExerciseBlock } from './ExerciseBlock'
 import {
@@ -17,6 +17,7 @@ interface WorkoutCardProps {
   /** Whether the card starts expanded (newest workout does; older collapse). */
   defaultExpanded?: boolean
   onRemove: () => void
+  onDuplicate: () => void
   onAddExercise: (name: string) => void
   onRemoveExercise: (exerciseId: string) => void
   onAddSet: (exerciseId: string) => void
@@ -39,6 +40,7 @@ export function WorkoutCard({
   exerciseSuggestions,
   defaultExpanded = true,
   onRemove,
+  onDuplicate,
   onAddExercise,
   onRemoveExercise,
   onAddSet,
@@ -104,6 +106,15 @@ export function WorkoutCard({
               </p>
             </div>
           )}
+          <button
+            type="button"
+            aria-label={`Repeat ${workout.title}`}
+            title="Start a new workout from this one"
+            onClick={onDuplicate}
+            className="shrink-0 text-muted-foreground/40 transition hover:text-primary"
+          >
+            <Copy className="size-4" />
+          </button>
           <button
             type="button"
             aria-label={`Delete ${workout.title}`}

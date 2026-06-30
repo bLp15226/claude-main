@@ -15,6 +15,7 @@ export function WorkoutsPage() {
     loading,
     addWorkout,
     removeWorkout,
+    duplicateWorkout,
     addExercise,
     removeExercise,
     addSet,
@@ -83,6 +84,7 @@ export function WorkoutsPage() {
               exerciseSuggestions={exerciseSuggestions}
               defaultExpanded={index === 0}
               onRemove={() => removeWorkout(workout.id)}
+              onDuplicate={() => duplicateWorkout(workout.id)}
               onAddExercise={(name) => addExercise(workout.id, name)}
               onRemoveExercise={(exerciseId) =>
                 removeExercise(workout.id, exerciseId)
