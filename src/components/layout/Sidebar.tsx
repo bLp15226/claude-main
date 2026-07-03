@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { Settings } from 'lucide-react'
 import { sections } from '@/config/sections'
 import { cn } from '@/lib/utils'
 import { useAuth } from '@/features/auth/AuthProvider'
@@ -9,13 +10,29 @@ export function Sidebar() {
   return (
     <aside className="hidden md:flex md:w-64 lg:w-72 shrink-0 flex-col border-r border-border/70 bg-surface">
       {/* Brand mark */}
-      <div className="px-7 pt-9 pb-8">
-        <span className="font-serif text-2xl font-medium tracking-wide">
-          Command<span className="text-primary">.</span>
-        </span>
-        <p className="mt-1.5 text-[11px] uppercase tracking-[0.35em] text-muted-foreground">
-          Center
-        </p>
+      <div className="flex items-start justify-between px-7 pt-9 pb-8">
+        <div>
+          <span className="font-serif text-2xl font-medium tracking-wide">
+            Command<span className="text-primary">.</span>
+          </span>
+          <p className="mt-1.5 text-[11px] uppercase tracking-[0.35em] text-muted-foreground">
+            Center
+          </p>
+        </div>
+        <NavLink
+          to="/settings"
+          aria-label="Settings"
+          className={({ isActive }) =>
+            cn(
+              'mt-1 rounded-md p-1.5 transition-colors',
+              isActive
+                ? 'text-primary'
+                : 'text-muted-foreground/60 hover:text-foreground',
+            )
+          }
+        >
+          <Settings className="size-[18px]" />
+        </NavLink>
       </div>
 
       <nav className="flex-1 space-y-1 px-4">

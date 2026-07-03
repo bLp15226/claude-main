@@ -4,6 +4,7 @@ import { BusinessPage } from '@/pages/BusinessPage'
 import { FamilyPage } from '@/pages/FamilyPage'
 import { WorkoutsPage } from '@/pages/WorkoutsPage'
 import { GroceriesPage } from '@/pages/GroceriesPage'
+import { SettingsPage } from '@/pages/SettingsPage'
 import { AuthGate } from '@/features/auth/AuthGate'
 import { useAuth } from '@/features/auth/AuthProvider'
 
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/family" element={<FamilyPage />} />
         <Route path="/workouts" element={<WorkoutsPage />} />
         <Route path="/groceries" element={<GroceriesPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
         <Route path="*" element={<Navigate to="/business" replace />} />
       </Route>
     </Routes>
