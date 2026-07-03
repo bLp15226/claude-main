@@ -116,6 +116,13 @@ External services this app connects to:
   Swappable data layer (`src/features/groceries/repo.ts`): uses device storage
   now, auto-switches to Supabase when env vars are present. Supabase schema +
   RLS migration and setup steps are in `supabase/` (see its README).
+  **Realtime sync wired and verified (2026-07-03)**: `GroceryRepo.subscribe()`
+  (no-op on local storage, a real Supabase Realtime channel on
+  `postgres_changes` for INSERT/UPDATE/DELETE when cloud). `useGroceries`
+  merges incoming events into state with id-based dedup, so a session's own
+  optimistic update and its later realtime echo don't double-apply. Verified
+  end-to-end with two real signed-in browser tabs: add/check/remove in one tab
+  propagated live to the other with no reload, in both directions.
 - **Workouts slice (2nd vertical slice) built & verified** (`src/features/workouts/`):
   manual logger — start a named workout, add exercises, log sets (weight × reps),
   with a live volume tally in the Coach voice. Optimistic UI; same swappable repo
@@ -193,13 +200,11 @@ External services this app connects to:
   access token used transiently for login/deploy, never written to disk).
 
 ## Next step
-1. **Wire up realtime sync** for groceries (repo layer's already ready for it) —
-   confirm changes propagate live across two devices/tabs.
-2. Business and Family sections are still placeholder-only ("Planned" cards) —
+1. Business and Family sections are still placeholder-only ("Planned" cards) —
    pick one to build as the next vertical slice, OR resume the parked voice-
    assistant Phase 2 (Claude-powered NLU + expressive TTS), now that Supabase
    secrets are unblocked.
-3. User wants a pass on "personal touch / user-friendliness" polish — no specific
+2. User wants a pass on "personal touch / user-friendliness" polish — no specific
    list yet, TBD together next session (UI copy, empty states, onboarding feel,
    whatever stands out when using it day-to-day).
 
@@ -207,7 +212,7 @@ External services this app connects to:
 - ~~Final tech stack~~ — confirmed.
 - ~~Which section first~~ — Groceries (done).
 - ~~Auth method~~ — device passkeys (built & verified end-to-end).
-- Realtime sync subscription for groceries — wire up next (repo already ready).
+- ~~Realtime sync subscription for groceries~~ — wired & verified end-to-end.
 - Which section to build out next: Business (Shopify/Ads/Omnisend) vs. Family
   (Google Calendar + goals/tasks) — user's call.
 - Background photos are local-only (this device) — revisit if cross-device

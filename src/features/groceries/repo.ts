@@ -16,9 +16,22 @@ export interface GroceryRepo {
   ): Promise<void>
   remove(id: string): Promise<void>
   clearChecked(): Promise<void>
+  /**
+   * Subscribe to changes from other sessions (other devices/tabs). Returns an
+   * unsubscribe function. The local repo has nothing to subscribe to (this
+   * device's storage is already the source of truth for itself), so it's a
+   * no-op there.
+   */
+  subscribe(onChange: (event: GroceryChangeEvent) => void): () => void
 }
 
-const byCreated = (a: GroceryItem, b: GroceryItem) =>
+/** A change that originated somewhere else and needs to be merged into state. */
+export type GroceryChangeEvent =
+  | { type: 'INSERT'; item: GroceryItem }
+  | { type: 'UPDATE'; item: GroceryItem }
+  | { type: 'DELETE'; id: string }
+
+export const byCreated = (a: GroceryItem, b: GroceryItem) =>
   a.created_at.localeCompare(b.created_at)
 
 // ── Local (device) implementation ──────────────────────────────────────────
@@ -62,6 +75,9 @@ const localRepo: GroceryRepo = {
   async clearChecked() {
     writeLocal(readLocal().filter((i) => !i.checked))
   },
+  subscribe() {
+    return () => {}
+  },
 }
 
 // ── Supabase (cloud) implementation ────────────────────────────────────────
@@ -96,6 +112,30 @@ const supabaseRepo: GroceryRepo = {
   async clearChecked() {
     const { error } = await supabase!.from(TABLE).delete().eq('checked', true)
     if (error) throw error
+  },
+  subscribe(onChange) {
+    const channel = supabase!
+      .channel('grocery-items-sync')
+      .on(
+        'postgres_changes',
+        { event: 'INSERT', schema: 'public', table: TABLE },
+        (payload) => onChange({ type: 'INSERT', item: payload.new as GroceryItem }),
+      )
+      .on(
+        'postgres_changes',
+        { event: 'UPDATE', schema: 'public', table: TABLE },
+        (payload) => onChange({ type: 'UPDATE', item: payload.new as GroceryItem }),
+      )
+      .on(
+        'postgres_changes',
+        { event: 'DELETE', schema: 'public', table: TABLE },
+        (payload) => onChange({ type: 'DELETE', id: (payload.old as { id: string }).id }),
+      )
+      .subscribe()
+
+    return () => {
+      supabase!.removeChannel(channel)
+    }
   },
 }
 
