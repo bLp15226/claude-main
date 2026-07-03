@@ -36,9 +36,7 @@ export const sections: Section[] = [
     tagline: 'Calm, strategic counsel. Premium and family-first.',
     icon: Briefcase,
     features: [
-      { title: 'Pinned Goals', description: 'Weekly and monthly targets, always in view at the top.' },
       { title: 'Shopify Revenue', description: 'Live daily revenue and top performers from the store.' },
-      { title: 'Daily Tasks', description: 'The short list of what moves the business today.' },
       { title: 'Facebook Ads', description: 'See performance, pause ads, and adjust budgets by voice.' },
       { title: 'Omnisend', description: 'Email and SMS performance at a glance.' },
       { title: 'Suppliers & Inventory', description: 'Dropship status and lead times in one tracker.' },
@@ -48,12 +46,11 @@ export const sections: Section[] = [
     path: '/family',
     label: 'Personal & Family',
     shortLabel: 'Family',
-    voice: 'The Understudy',
+    voice: 'Kurt',
     tagline: 'Life, scheduled — delivered with comedic timing.',
     icon: Users,
     features: [
       { title: 'Calendar Sync', description: 'Google Calendar: bills, appointments, and dates.' },
-      { title: 'Goals & Tasks', description: 'Personal weekly and monthly goals plus daily tasks.' },
       { title: 'Advice, With Jokes', description: 'Good-natured guidance with a sense of humor.' },
     ],
   },

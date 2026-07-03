@@ -147,6 +147,33 @@ External services this app connects to:
   want (e.g. Family photo zoomed on one kid instead of the whole family).
   Local-only for now — same local-first pattern as groceries/workouts before
   cloud existed; could swap to Supabase Storage later for cross-device sync.
+- **Goals/tasks CRUD built for Business + Family (2026-07-03)**
+  (`src/features/goals/`): first vertical slice of each section, per the
+  scoping outline reviewed before building. One shared table (`goal_items`,
+  `supabase/migrations/0003_goals.sql` — **not yet run**, same manual
+  SQL-editor step as the prior two migrations) tagged by `section` (`business`
+  | `family`) and `kind` (`goal` | `task`); goals carry a `weekly`/`monthly`
+  timeframe and stay pinned until checked off, tasks are a flat daily
+  checklist with clear-done. Same swappable repo + optimistic-UI + realtime-
+  subscribe pattern as Groceries (`GoalsRepo.subscribe`, id-based dedup in
+  `useGoals`). `GoalsPanel` is the shared embeddable UI; each page (
+  `BusinessPage`, `FamilyPage`) owns its own `useGoals(section)` call and
+  passes it down as props — deliberately not called twice, so a voice-added
+  item and the on-screen panel share one state instance instead of two that
+  could drift apart in local/device-only mode. `SectionScaffold` gained a
+  `children` slot so this renders above the still-"Planned" cards; the
+  now-built "Pinned Goals"/"Daily Tasks"/"Goals & Tasks" cards were removed
+  from `src/config/sections.ts`. Type-checked clean; **not yet verified live
+  in-browser** — the app gates behind WebAuthn passkey sign-in in cloud mode,
+  which needs your actual hardware, so do a quick pass (add a goal/task on
+  each page, check off, clear-done) next time you're in.
+- **Kurt wired to real actions (2026-07-03)**: `familyCommands.ts`'s
+  `interpretFamily` now returns a typed `add_task` / `add_goal` / `unknown`
+  command (mirrors Workouts' `interpret()` seam exactly) instead of the old
+  demo-only banter-only responder. Understands "add a task to …" and "add a
+  weekly/monthly goal to …" via simple deterministic phrase-matching (no NLU
+  yet — that's still Phase 2). `FamilyPage` matches the command kind and
+  calls the real `add()` from its `useGoals('family')` instance.
 
 ## Voice assistant (Phase 1 built & verified, on hold for now)
 - **Goal:** a mic widget — tap, say "Hey <name>, …" — that understands a request,
@@ -157,6 +184,12 @@ External services this app connects to:
   browser Web Speech API for STT + TTS (free, no cloud); a simple deterministic
   command reader that handles "add <exercise>" today. Wired into Workouts via
   `logExercise()` on `useWorkouts`. Verified end-to-end via the typed path.
+- **Personas today:** Arnold + Pulse (Workouts), Kurt (Family — theatrical method-actor
+  energy; wired to real goals/tasks actions in `familyCommands.ts` as of
+  2026-07-03, same deterministic-reader pattern as Workouts). All verified
+  end-to-end via the typed path except Kurt's new add-goal/add-task actions,
+  which are blocked on the passkey sign-in gate for live browser testing (see
+  Current status).
 - **Phase 2 (needs Supabase — now unblocked):** replace the simple reader with the
   Claude API (natural-language → actions) behind the same `interpret()` seam, and
   upgrade TTS to an expressive provider. Both need secret keys → server-side
@@ -200,11 +233,16 @@ External services this app connects to:
   access token used transiently for login/deploy, never written to disk).
 
 ## Next step
-1. Business and Family sections are still placeholder-only ("Planned" cards) —
-   pick one to build as the next vertical slice, OR resume the parked voice-
-   assistant Phase 2 (Claude-powered NLU + expressive TTS), now that Supabase
-   secrets are unblocked.
-2. User wants a pass on "personal touch / user-friendliness" polish — no specific
+1. Run `supabase/migrations/0003_goals.sql` (SQL editor or `supabase db push`),
+   then verify the new Goals/Tasks CRUD live in-browser on both Business and
+   Family (add a goal + task, check off, clear-done) — blocked on your passkey
+   for me to do it myself. Confirm Kurt's "add a task to …" / "add a
+   weekly/monthly goal to …" voice commands land the same real data.
+2. Everything else from the Business/Family scoping outline still waits for
+   your review and call: Shopify read-only dashboard (Edge Function), Facebook
+   Ads Manager view, Google Calendar OAuth + Edge Function, Omnisend (blocked
+   on an account/key), supplier/inventory tracker, and the Aurelius text persona.
+3. User wants a pass on "personal touch / user-friendliness" polish — no specific
    list yet, TBD together next session (UI copy, empty states, onboarding feel,
    whatever stands out when using it day-to-day).
 
@@ -213,7 +251,12 @@ External services this app connects to:
 - ~~Which section first~~ — Groceries (done).
 - ~~Auth method~~ — device passkeys (built & verified end-to-end).
 - ~~Realtime sync subscription for groceries~~ — wired & verified end-to-end.
-- Which section to build out next: Business (Shopify/Ads/Omnisend) vs. Family
-  (Google Calendar + goals/tasks) — user's call.
+- ~~Goals/tasks CRUD for Business + Family~~ — built (2026-07-03), pending your
+  live-browser verification pass.
+- Business: Shopify metrics/cadence, Facebook Ads scope (view-only vs.
+  pause/budget control), Omnisend account status, supplier-tracker fields/import
+  source — all still your call per the scoping outline.
+- Family: Google Calendar scope (read-only vs. write-back), which calendar(s) —
+  still your call.
 - Background photos are local-only (this device) — revisit if cross-device
   photo sync matters enough to justify a Supabase Storage bucket.

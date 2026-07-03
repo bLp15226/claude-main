@@ -7,6 +7,8 @@ interface SectionScaffoldProps {
   section: Section
   /** Optional custom header; falls back to the standard text PageHeader. */
   header?: ReactNode
+  /** Built features (e.g. a Goals panel) shown between the header and the still-planned cards. */
+  children?: ReactNode
 }
 
 /**
@@ -14,7 +16,7 @@ interface SectionScaffoldProps {
  * section's identity plus its planned features as elegant "Planned" cards,
  * so each screen feels intentional rather than empty.
  */
-export function SectionScaffold({ section, header }: SectionScaffoldProps) {
+export function SectionScaffold({ section, header, children }: SectionScaffoldProps) {
   return (
     <div>
       {header ?? (
@@ -24,6 +26,8 @@ export function SectionScaffold({ section, header }: SectionScaffoldProps) {
           tagline={section.tagline}
         />
       )}
+
+      {children}
 
       <div className="grid gap-4 sm:grid-cols-2">
         {section.features.map((feature) => (
