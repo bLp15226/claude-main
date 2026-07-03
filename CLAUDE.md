@@ -174,6 +174,27 @@ External services this app connects to:
   weekly/monthly goal to …" via simple deterministic phrase-matching (no NLU
   yet — that's still Phase 2). `FamilyPage` matches the command kind and
   calls the real `add()` from its `useGoals('family')` instance.
+- **Text-persona polish for Arnold + Kurt (2026-07-03)**, still Phase 1 (no new
+  integrations, no secrets): `Persona.catchphrase`/`interjection` are now
+  `catchphrases[]`/`interjections[]` — a small pool per persona, picked at
+  random per reply (`commands.ts`'s new `pick()` helper) so replies aren't the
+  identical line every single time. Pulse got the same treatment for
+  consistency even though its command vocabulary didn't change. Widened
+  vocabulary: Arnold now understands "another set"/"same again" (repeats the
+  most-recently-logged exercise, resolved by `WorkoutsPage` via a
+  `lastExercise` context param since `interpret()` itself is stateless) and
+  "how am I doing"/"status" (a `{ kind: 'status' }` the page fills in with
+  real lifetime volume/workout-count numbers — `interpret()` has no access to
+  real data by design, same pattern as the add-exercise reply). Kurt now
+  understands "mark ... done"/"complete ..."/"finish ..." (fuzzy substring
+  match against live goals+tasks, then a real `toggle()`) and "what's on my
+  list"/"status" (real open-goals/open-tasks counts). Verified by running the
+  pure `interpret()`/`interpretFamily()` functions directly against ~15 sample
+  phrases (outside the browser, since the app's still gated behind your
+  passkey for me) — catchphrase variety, context-aware repeat, and all new
+  command branches behaved as designed. Not yet heard out loud — device TTS
+  voice tuning (pitch/rate/voice picks) is unchanged from before and genuinely
+  needs your own ears; I can't audibly verify that from here.
 
 ## Voice assistant (Phase 1 built & verified, on hold for now)
 - **Goal:** a mic widget — tap, say "Hey <name>, …" — that understands a request,
@@ -237,7 +258,10 @@ External services this app connects to:
    then verify the new Goals/Tasks CRUD live in-browser on both Business and
    Family (add a goal + task, check off, clear-done) — blocked on your passkey
    for me to do it myself. Confirm Kurt's "add a task to …" / "add a
-   weekly/monthly goal to …" voice commands land the same real data.
+   weekly/monthly goal to …" voice commands land the same real data, plus the
+   new "mark ... done" / "what's on my list" commands, and give Arnold's
+   "another set" / "how am I doing" a try on Workouts. Also just listen to a
+   couple of replies — the catchphrase/interjection variety is untested by ear.
 2. Everything else from the Business/Family scoping outline still waits for
    your review and call: Shopify read-only dashboard (Edge Function), Facebook
    Ads Manager view, Google Calendar OAuth + Edge Function, Omnisend (blocked

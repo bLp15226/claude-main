@@ -10,15 +10,27 @@ import type { Persona } from './personas'
  */
 export type Command =
   | { kind: 'add_exercise'; exercise: string; reply: string }
+  | { kind: 'status' }
   | { kind: 'unknown'; reply: string }
 
+/** Context the page can supply that interpret() itself has no way to know. */
+export interface CommandContext {
+  /** The most recently logged exercise name, for "another set"/"same again". */
+  lastExercise?: string
+}
+
 /** Strip a persona's wake words and common politeness from the front. */
-function stripWake(text: string, persona: Persona): string {
+export function stripWake(text: string, persona: Persona): string {
   let t = text.toLowerCase().trim()
   for (const w of [...persona.wakeWords, 'hey', 'ok', 'okay']) {
     if (t.startsWith(w)) t = t.slice(w.length).trim()
   }
   return t.replace(/^[,.\s]+/, '').replace(/^(please|can you|could you|would you)\s+/i, '')
+}
+
+/** Pick a random item from a persona's line pool, so replies aren't identical every time. */
+export function pick<T>(items: T[]): T {
+  return items[Math.floor(Math.random() * items.length)]
 }
 
 // Filler that surrounds the exercise name in a spoken "add" command.
@@ -34,8 +46,27 @@ function titleCase(s: string): string {
 }
 
 /** Turn spoken text into a workout command + a persona-flavored reply. */
-export function interpret(rawText: string, persona: Persona): Command {
+export function interpret(rawText: string, persona: Persona, context: CommandContext = {}): Command {
   const text = stripWake(rawText, persona)
+
+  if (/\b(how am i doing|how'?s it going|status|what'?s my (total|volume))\b/.test(text)) {
+    return { kind: 'status' }
+  }
+
+  // "another set" / "same again" / "one more set" repeats the last exercise logged.
+  if (/\b(another set|same again|one more set|do that again)\b/.test(text)) {
+    if (context.lastExercise) {
+      return {
+        kind: 'add_exercise',
+        exercise: context.lastExercise,
+        reply: `${pick(persona.interjections)} Another set of ${context.lastExercise} — logged. ${pick(persona.catchphrases)}`,
+      }
+    }
+    return {
+      kind: 'unknown',
+      reply: `${persona.name} here. Log an exercise first, then say "another set" to repeat it.`,
+    }
+  }
 
   if (/\badd\b/.test(text)) {
     // Everything after the first "add", with filler words removed.
@@ -45,7 +76,7 @@ export function interpret(rawText: string, persona: Persona): Command {
       return {
         kind: 'add_exercise',
         exercise,
-        reply: `${persona.interjection} ${exercise} — locked into today's workout. ${persona.catchphrase}`,
+        reply: `${pick(persona.interjections)} ${exercise} — locked into today's workout. ${pick(persona.catchphrases)}`,
       }
     }
   }
@@ -53,7 +84,7 @@ export function interpret(rawText: string, persona: Persona): Command {
   return {
     kind: 'unknown',
     reply:
-      `${persona.name} here. Right now I can add exercises — try ` +
-      `"add bench press". The smart stuff arrives once we connect the brain.`,
+      `${persona.name} here. Try "add bench press," "another set," or "how am I doing." ` +
+      `The smart stuff arrives once we connect the brain.`,
   }
 }

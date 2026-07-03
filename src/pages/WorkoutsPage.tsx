@@ -6,7 +6,7 @@ import { ProgressPanel } from '@/features/workouts/ProgressPanel'
 import { WorkoutCard } from '@/features/workouts/WorkoutCard'
 import { VoiceAssistant } from '@/features/voice/VoiceAssistant'
 import { personasForSection } from '@/features/voice/personas'
-import { interpret } from '@/features/voice/commands'
+import { interpret, pick } from '@/features/voice/commands'
 import type { Persona } from '@/features/voice/personas'
 import { useWorkouts } from '@/features/workouts/useWorkouts'
 import { usingHevy } from '@/features/workouts/repo'
@@ -46,11 +46,23 @@ export function WorkoutsPage() {
   )
 
   // Voice assistant (Phase 1): the simple command reader runs the action and
-  // returns the persona's spoken reply.
+  // returns the persona's spoken reply. "status" has no fixed reply — interpret()
+  // can't see real numbers, so this page fills them in.
   const personas = personasForSection('/workouts')
+  const lastExercise = workouts[0]?.exercises.at(-1)?.name
   const handleVoice = (text: string, persona: Persona): string => {
-    const cmd = interpret(text, persona)
-    if (cmd.kind === 'add_exercise') logExercise(cmd.exercise)
+    const cmd = interpret(text, persona, { lastExercise })
+    if (cmd.kind === 'add_exercise') {
+      logExercise(cmd.exercise)
+      return cmd.reply
+    }
+    if (cmd.kind === 'status') {
+      return (
+        `${pick(persona.interjections)} You've logged ${workouts.length} ` +
+        `${workouts.length === 1 ? 'workout' : 'workouts'} and moved ` +
+        `${totalVolume.toLocaleString()} ${WEIGHT_UNIT} total. ${pick(persona.catchphrases)}`
+      )
+    }
     return cmd.reply
   }
 
