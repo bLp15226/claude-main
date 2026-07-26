@@ -51,7 +51,24 @@
       "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -aqm 'Update CLAUDE.md status with Workouts enhancements *)",
       "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\)+\";\"+[Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); npm run build 2>&1 | Select-String -Pattern \"error TS|PARSE_ERROR|✓ built|Build failed|error during\" | Select-Object -First 15)",
       "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -q -m 'Voice assistant foundation \\(Phase 1, Workouts\\) *)",
-      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -aqm 'Document voice assistant \\(Phase 1\\) + Phase 2 plan in CLAUDE.md *)"
+      "Bash(git -c user.name=blpinc -c user.email=blpinc@live.com commit -aqm 'Document voice assistant \\(Phase 1\\) + Phase 2 plan in CLAUDE.md *)",
+      "Bash(xxd \"BenPedersenID.jpg.~.env\")",
+      "Bash(node -e \"console.log\\(require\\('fs'\\).readFileSync\\('.env','utf8'\\).match\\(/VITE_SUPABASE_ANON_KEY=\\(.+\\)/\\)[1].length\\)\")",
+      "Bash(npm i *)",
+      "Bash(supabase login *)",
+      "Bash(supabase link *)",
+      "WebSearch",
+      "Bash(node -e \"try{require\\('fs'\\).rmSync\\('supabase/.temp', {recursive:true, force:true}\\)}catch\\(e\\){}\")",
+      "Bash(supabase init *)",
+      "Bash(supabase functions *)",
+      "Bash(supabase secrets *)",
+      "Bash(npm run *)",
+      "Read(//c/Users/blpin/OneDrive/Desktop/Claude Skills Forge//**)",
+      "Read(//c/Users/blpin/Desktop/**)",
+      "Bash(find \"/c/Users/blpin/OneDrive/Desktop/Claude Skills Forge/\" -type f | sort)",
+      "Read(//c/Users/blpin/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/31547100-7fd8-423f-9524-f29652dbc7a6/ab01afb8-b904-496a-b50f-53a794d29403/skills/skill-forge/**)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\blpin\\\\OneDrive\\\\Desktop\\\\Claude.MD\\\\.claude\\\\_forge\\\\scripts\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\blpin\\\\OneDrive\\\\Desktop\\\\Claude.MD\\\\.claude\\\\skills\")"
     ]
   }
 }

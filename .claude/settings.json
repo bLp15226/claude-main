@@ -26,5 +26,21 @@
       "Edit(.env)",
       "Write(.env)"
     ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "for p in \"$CLAUDE_PROJECT_DIR/.claude/scripts/mobile-session-init.sh\" \"$CLAUDE_PROJECT_DIR/scripts/mobile-session-init.sh\"; do [ -f \"$p\" ] && exec bash \"$p\"; done; exit 0",
+            "timeout": 300,
+            "statusMessage": "Checking /watch environment"
+          }
+        ]
+      }
+    ]
   }
 }
