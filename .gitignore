@@ -24,3 +24,12 @@ dev-dist
 .idea
 .DS_Store
 Thumbs.db
+
+# Claude Code — skills/_forge/commands live in their own repo
+# (github.com/bLp15226/PHC-Claude-Skills) so they aren't tracked twice.
+# Must be `.claude/*`, not `.claude/`: git won't descend into an ignored
+# directory, which would make the exceptions below silently do nothing.
+.claude/*
+!.claude/settings.json
+!.claude/settings.local.json
+!.claude/launch.json
