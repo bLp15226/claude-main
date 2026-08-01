@@ -159,6 +159,27 @@ ensure_ytdlp() {
   esac
 }
 
+# The settings.json deny list blocks pushes to main by matching the command
+# text, which cannot express "a push with no refspec" — a bare `git push` from
+# main slips through every pattern spelling. push.default=nothing closes that at
+# the git level regardless of how the command is written. It is local config, so
+# a fresh cloud clone needs it set again each session.
+ensure_push_guard() {
+  if [[ "$(git -C "$REPO_DIR" config --get push.default 2>/dev/null)" == "nothing" ]]; then
+    note "push guard ok"
+    return
+  fi
+  if [[ "$MODE" == "check" ]]; then
+    fail "push guard NOT SET (push.default is not 'nothing')"
+    return
+  fi
+  if git -C "$REPO_DIR" config push.default nothing 2>>"$LOG_FILE"; then
+    note "push guard set"
+  else
+    fail "push guard NOT SET (git config push.default failed — see $LOG_FILE)"
+  fi
+}
+
 ensure_skill() {
   if [[ -f "$STAMP_FILE" && -f "$SKILL_DIR/SKILL.md" && "$MODE" != "force" ]]; then
     note "skill $(cat "$STAMP_FILE" 2>/dev/null | head -1)"
@@ -203,12 +224,15 @@ ensure_skill() {
 # --- fast path -------------------------------------------------------------
 # No network, no package managers: if everything is already in place, say so
 # and get out of the way.
-if [[ "$MODE" == "bootstrap" && -f "$STAMP_FILE" && -f "$SKILL_DIR/SKILL.md" ]] && have ffmpeg && have yt-dlp; then
+if [[ "$MODE" == "bootstrap" && -f "$STAMP_FILE" && -f "$SKILL_DIR/SKILL.md" ]] &&
+   [[ "$(git -C "$REPO_DIR" config --get push.default 2>/dev/null)" == "nothing" ]] &&
+   have ffmpeg && have yt-dlp; then
   echo "/watch: PASS — skill $(cat "$STAMP_FILE" 2>/dev/null | head -1), ffmpeg, yt-dlp all present"
   exit 0
 fi
 
 : >"$LOG_FILE" 2>/dev/null
+ensure_push_guard
 ensure_skill
 ensure_ffmpeg
 ensure_ytdlp
