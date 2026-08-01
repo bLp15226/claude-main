@@ -16,6 +16,8 @@
       "Bash(git push -u origin claude/*)"
     ],
     "deny": [
+      "Bash(git push)",
+      "Bash(git push origin)",
       "Bash(git push --force*)",
       "Bash(git push -f *)",
       "Bash(git push *main*)",
