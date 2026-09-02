@@ -97,10 +97,13 @@ trust for the home dir):
 session (computer icon + green dot = online). `/mobile` prints an app-download
 QR if the app isn't installed yet.
 
-**Auto-connect for every session — NOT yet turned on (2026-09-02).** Ben asked
-for it, but it can only be set on his own machine, so it's his to flip:
-`/config` → **Enable Remote Control for all sessions**, or
-`remoteControlAtStartup: true` in `C:\Users\blpin\.claude\settings.json`.
+**Auto-connect for every session — ON as of 2026-09-02.** Ben set it via
+`/config` → **Enable Remote Control for all sessions** (equivalent:
+`remoteControlAtStartup: true` in `C:\Users\blpin\.claude\settings.json`).
+Reported by Ben, not yet observed from a remote session — the toggle only
+affects sessions started *after* it was set, so confirming it means starting a
+fresh desktop session and checking it appears in the Code list. Until that's
+done, treat "auto-connect works" as unverified.
 **Gotcha:** project/local settings (`.claude/settings.json`,
 `.claude/settings.local.json`) *ignore* a `true` here — by design, so a
 checked-in file can't switch Remote Control on for everyone who opens the repo.
