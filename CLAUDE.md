@@ -48,12 +48,16 @@ nearly ordered the purge of two installed skills built four days earlier.)
 - **Centurion** — `.claude/skills/centurion-store-health/` — store health, checkout integrity — 2026-07-03
 - **Faber** — `.claude/skills/faber-creative-flywheel/` — the performance→creative flywheel: briefs off Legatus's winners/potentials, bloat guard, no fabricated proof — 2026-07-19 (v1.1.0)
 - **Vigil** — `.claude/skills/vigil-ads-monitor/` — unattended scheduled ad-account monitoring; reports, never diagnoses or mutates — 2026-07-19
+- **Beowulf** — `.claude/skills/beowulf-product-scouting/` — product scouting/validation before a
+  product gets a store slot or ad budget; three-box test, free organic demand evidence, 3x landed-cost
+  check, TEST/KILL/PARK verdicts — **corrected 2026-08-04: this is installed and live.** It was listed
+  as "staged, not yet installed" here and in `INDEX.md` until the `/watch` routing guard halted an
+  intake over the discrepancy. Disk beats docs — a directory with a loading `SKILL.md` is installed.
 
 **Build tools, not generals** (no Roman rank, no persona): `video-to-hat` (07-19),
 `shopify-theme-editor` (07-03), the `/watch` intake command (07-23).
 
 **Staged / named but unbuilt:**
-- **Beowulf** — product scouting/validation — staged, not yet installed
 - **Artifex** — creative production — unbuilt; *retirement recommended 2026-07-23
   (scope largely absorbed by Faber), Ben to rule*
 - **Praetorian** — account hygiene / ban-risk guard — unbuilt
@@ -74,6 +78,21 @@ voice, the Three Laws, sign-off authority.)
 - Never leave the app broken between sessions. Always land on a working checkpoint.
 - Tone: direct and casual, skip the filler.
 - When something's ambiguous, ask one clear question instead of guessing.
+
+## Token & effort discipline
+- **Concise by default.** Answer first; reasoning only when it changes the call.
+  Skip preamble, don't restate the question, don't narrate paths not taken.
+- **Push mechanical work to a cheap sub-agent** — renames, reformats, scraping,
+  boilerplate, mechanical refactors, log/diff triage. Spawn `Agent` with
+  `model: "haiku"` (or the cheapest capable model available); keep judgement
+  calls and anything touching product/strategy/copy on the main model.
+- **`/clear` between unrelated jobs** so a new task isn't re-reading a stale
+  transcript every turn.
+- **Never propose `/compact` as a cost move** — it can drop context that's still
+  needed. Only compact when the context bar is genuinely near full.
+- **Trim noisy output.** The Bash tool auto-trims build/install/test logs via a
+  PreToolUse hook. For the PowerShell tool, add `| Select-Object -Last 40`
+  yourself. Prefer plain text over pasted PDFs/screenshots when one exists.
 
 ## Tech stack (CONFIRMED 2026-06-28)
 The app must: install on Android and Chromebook, sync in real time across devices,
@@ -155,185 +174,51 @@ External services this app connects to:
   voice-cloning of real people as a separate, deliberate decision — flag it
   rather than building it silently. Keep all personality content good-natured;
   avoid offensive or slur-adjacent material.
+- **LOCKED:** personas are original *style* voices (an Austrian-accented coach, a
+  theatrical method actor), never clones of real people. Do not build real-person
+  voice clones.
 
-## Current status (updated 2026-06-30)
-- **Version control set up (2026-06-30)**: git initialized, `.gitignore` already
-  excludes `.env` + secrets. A project allowlist lives in `.claude/settings.json`
-  (file edits / git / npm run without prompts; pushes, deletes, network still ask).
-- **Shell built & working**: React+Vite+TS PWA, Tailwind v4 + shadcn-style
-  components, premium black-and-gold theme (Cormorant Garamond / Inter),
-  responsive nav (desktop rail + mobile tab bar), four section routes, PWA
-  manifest + icons. `npm run dev` → localhost:5173; `npm run build` is clean.
-- **Groceries slice (first vertical slice) built & verified**: add / organize
-  (group by category or store) / check-off / clear-checked, with optimistic UI.
-  Swappable data layer (`src/features/groceries/repo.ts`): uses device storage
-  now, auto-switches to Supabase when env vars are present. Supabase schema +
-  RLS migration and setup steps are in `supabase/` (see its README).
-  **Realtime sync wired and verified (2026-07-03)**: `GroceryRepo.subscribe()`
-  (no-op on local storage, a real Supabase Realtime channel on
-  `postgres_changes` for INSERT/UPDATE/DELETE when cloud). `useGroceries`
-  merges incoming events into state with id-based dedup, so a session's own
-  optimistic update and its later realtime echo don't double-apply. Verified
-  end-to-end with two real signed-in browser tabs: add/check/remove in one tab
-  propagated live to the other with no reload, in both directions.
-- **Workouts slice (2nd vertical slice) built & verified** (`src/features/workouts/`):
-  manual logger — start a named workout, add exercises, log sets (weight × reps),
-  with a live volume tally in the Coach voice. Optimistic UI; same swappable repo
-  pattern (device storage now, `hevyRepo` is a marked one-line swap later).
-  Verified end-to-end in-browser incl. reload persistence. NOTE: user is on the
-  FREE Hevy tier — Hevy's API key needs Pro, so live sync is optional/later; the
-  free path is a one-time "import my Hevy export" feature (not yet built).
-  Enhancements added: collapsible workout cards (newest open); "Repeat workout"
-  (duplicate a session with last time's numbers); per-exercise progress chart
-  (`progress.ts` + `ProgressChart.tsx` + `ProgressPanel.tsx`) — custom SVG line of
-  total volume over time, Month/3-Month/All zoom, tap-a-point day detail. Note:
-  keep repo side-effects OUT of setState updaters (StrictMode double-invokes them).
-- **Settings page + per-section background photos built (2026-06-30)**
-  (`src/features/settings/`): gear icon in the desktop sidebar (top-right of the
-  brand mark) and mobile header opens `/settings`. Each section gets a photo,
-  stored locally on-device via IndexedDB (`backgroundStore.ts` — not
-  localStorage; photos are too big for its ~5MB string limit). Shown as a
-  dimmed background behind that section's content only (`AppShell.tsx` reads
-  the current route and renders it). Includes a **drag-to-reposition focal
-  point** on the Settings preview thumbnail (small gold dot you drag) since
-  `background-size: cover` was cropping some photos in a way the user didn't
-  want (e.g. Family photo zoomed on one kid instead of the whole family).
-  Local-only for now — same local-first pattern as groceries/workouts before
-  cloud existed; could swap to Supabase Storage later for cross-device sync.
-- **Goals/tasks CRUD built for Business + Family (2026-07-03)**
-  (`src/features/goals/`): first vertical slice of each section, per the
-  scoping outline reviewed before building. One shared table (`goal_items`,
-  `supabase/migrations/0003_goals.sql` — **run 2026-07-14** via SQL editor,
-  same manual step as the prior two migrations) tagged by `section` (`business`
-  | `family`) and `kind` (`goal` | `task`); goals carry a `weekly`/`monthly`
-  timeframe and stay pinned until checked off, tasks are a flat daily
-  checklist with clear-done. Same swappable repo + optimistic-UI + realtime-
-  subscribe pattern as Groceries (`GoalsRepo.subscribe`, id-based dedup in
-  `useGoals`). `GoalsPanel` is the shared embeddable UI; each page (
-  `BusinessPage`, `FamilyPage`) owns its own `useGoals(section)` call and
-  passes it down as props — deliberately not called twice, so a voice-added
-  item and the on-screen panel share one state instance instead of two that
-  could drift apart in local/device-only mode. `SectionScaffold` gained a
-  `children` slot so this renders above the still-"Planned" cards; the
-  now-built "Pinned Goals"/"Daily Tasks"/"Goals & Tasks" cards were removed
-  from `src/config/sections.ts`. Type-checked clean; **not yet verified live
-  in-browser** — the app gates behind WebAuthn passkey sign-in in cloud mode,
-  which needs your actual hardware, so do a quick pass (add a goal/task on
-  each page, check off, clear-done) next time you're in.
-- **Kurt wired to real actions (2026-07-03)**: `familyCommands.ts`'s
-  `interpretFamily` now returns a typed `add_task` / `add_goal` / `unknown`
-  command (mirrors Workouts' `interpret()` seam exactly) instead of the old
-  demo-only banter-only responder. Understands "add a task to …" and "add a
-  weekly/monthly goal to …" via simple deterministic phrase-matching (no NLU
-  yet — that's still Phase 2). `FamilyPage` matches the command kind and
-  calls the real `add()` from its `useGoals('family')` instance.
-- **Text-persona polish for Arnold + Kurt (2026-07-03)**, still Phase 1 (no new
-  integrations, no secrets): `Persona.catchphrase`/`interjection` are now
-  `catchphrases[]`/`interjections[]` — a small pool per persona, picked at
-  random per reply (`commands.ts`'s new `pick()` helper) so replies aren't the
-  identical line every single time. Pulse got the same treatment for
-  consistency even though its command vocabulary didn't change. Widened
-  vocabulary: Arnold now understands "another set"/"same again" (repeats the
-  most-recently-logged exercise, resolved by `WorkoutsPage` via a
-  `lastExercise` context param since `interpret()` itself is stateless) and
-  "how am I doing"/"status" (a `{ kind: 'status' }` the page fills in with
-  real lifetime volume/workout-count numbers — `interpret()` has no access to
-  real data by design, same pattern as the add-exercise reply). Kurt now
-  understands "mark ... done"/"complete ..."/"finish ..." (fuzzy substring
-  match against live goals+tasks, then a real `toggle()`) and "what's on my
-  list"/"status" (real open-goals/open-tasks counts). Verified by running the
-  pure `interpret()`/`interpretFamily()` functions directly against ~15 sample
-  phrases (outside the browser, since the app's still gated behind your
-  passkey for me) — catchphrase variety, context-aware repeat, and all new
-  command branches behaved as designed. Not yet heard out loud — device TTS
-  voice tuning (pitch/rate/voice picks) is unchanged from before and genuinely
-  needs your own ears; I can't audibly verify that from here.
+## Build status (summary — full dated log in CLAUDE.archive.md)
+Working checkpoint, 2026-07-14. Every slice is offline-first: swappable repo
+(device storage now, Supabase auto-swaps when env vars are set), optimistic UI,
+id-deduped realtime `subscribe()`.
+- **Shell** — React+Vite+TS PWA, Tailwind v4, black-and-gold theme, responsive
+  nav, 4 routes, PWA manifest/icons; `npm run build` clean.
+- **Groceries** — built & verified incl. live realtime sync across two tabs.
+- **Workouts** — built & verified: manual logger (sets × reps, live volume),
+  collapsible cards, repeat-workout, per-exercise SVG progress chart. FREE Hevy
+  tier → no API key; "import Hevy export" not built.
+- **Goals/Tasks CRUD (Business + Family)** — built, type-clean, **not yet verified
+  live in-browser** (passkey gate). `goal_items`, migration `0003_goals.sql` run.
+- **Voice Phase 1** — mic widget + typed fallback, personas (Arnold/Pulse, Kurt),
+  Web Speech STT/TTS, deterministic reader behind an `interpret()` seam. Kurt
+  wired to real goal/task actions. Verified via typed path; TTS tuning needs your
+  ears. Phase 2 (Claude API NLU + expressive TTS, server-side) parked.
+- **Auth** — device passkeys (WebAuthn), verified end-to-end. Supabase project
+  `fraihyghvkrzkbmxqfil` live; `.env` has URL + anon key; migrations 0002/0003 run.
 
-## Voice assistant (Phase 1 built & verified, on hold for now)
-- **Goal:** a mic widget — tap, say "Hey <name>, …" — that understands a request,
-  performs the action, and replies aloud in a character voice. Cross-cutting
-  (every section gets its own personas).
-- **Built (`src/features/voice/`):** floating mic widget + typed-command fallback;
-  persona registry (per-section named characters w/ personality + voice hints);
-  browser Web Speech API for STT + TTS (free, no cloud); a simple deterministic
-  command reader that handles "add <exercise>" today. Wired into Workouts via
-  `logExercise()` on `useWorkouts`. Verified end-to-end via the typed path.
-- **Personas today:** Arnold + Pulse (Workouts), Kurt (Family — theatrical method-actor
-  energy; wired to real goals/tasks actions in `familyCommands.ts` as of
-  2026-07-03, same deterministic-reader pattern as Workouts). All verified
-  end-to-end via the typed path except Kurt's new add-goal/add-task actions,
-  which are blocked on the passkey sign-in gate for live browser testing (see
-  Current status).
-- **Phase 2 (needs Supabase — now unblocked):** replace the simple reader with the
-  Claude API (natural-language → actions) behind the same `interpret()` seam, and
-  upgrade TTS to an expressive provider. Both need secret keys → server-side
-  (Edge Functions). Parked for now to focus on Supabase/auth; pick up when ready.
-- **Voice-cloning decision (LOCKED):** personas are ORIGINAL *style* voices (e.g.
-  an Austrian-accented coach, a theatrical method actor), NOT clones of real people.
-  Quality TTS providers forbid cloning real voices without consent; we evoke the
-  vibe instead. User tried to source real Arnold/movie-clip audio via Fish Audio
-  and a movie-audio rip; flagged the likeness/copyright/ToS risk and user agreed to
-  go with original-style voices instead. Do not build actual real-person voice clones.
-
-## Auth (VERIFIED END-TO-END 2026-06-30)
-- **Auth method: device passkeys** (WebAuthn — Face ID / fingerprint / Windows
-  Hello). Supabase has no built-in passkey provider, so it's a `credentials`
-  table + one Edge Function (WebAuthn challenge/verify via
-  `@simplewebauthn/server`) + session minting with the service-role key.
-- **Auth foundation** (`src/features/auth/`): `AuthProvider` (local/cloud modes),
-  app gating in `App.tsx`, `AuthGate` sign-in screen, sidebar sign-out. Local
-  mode = no login. Cloud mode = gate until signed in.
-- **Passkey flow — first real registration succeeded 2026-06-30.** Signed in via
-  Windows Hello; cloud mode is live end-to-end:
-  - Edge Function `supabase/functions/passkey/index.ts` (Deno, 4 actions;
-    @simplewebauthn v13; mints session via magic-link token_hash). Deployed.
-  - Tables: `supabase/migrations/0002_passkeys.sql` (RLS, service-role only). Run.
-  - Client: `src/features/auth/passkey.ts` + real `AuthGate` form. Working.
-- **Supabase project is live:** project ref `fraihyghvkrzkbmxqfil`. `.env` has
-  `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` filled in (gitignored). Both
-  migrations run and confirmed via `information_schema.tables`.
-- **Windows/OneDrive CLI gotcha:** `supabase link` fails with `PlatformError:
-  AlreadyExists: FileSystem.makeDirectory ...supabase\.temp` in this OneDrive-
-  synced project folder — a known-flaky interaction between the CLI's temp-dir
-  handling and OneDrive's file sync/locking. **Workaround: skip `link` entirely**
-  and pass `--project-ref fraihyghvkrzkbmxqfil` directly on every CLI command
-  (`functions deploy`, `secrets set`, etc.) instead. Ran `supabase init` once to
-  create `supabase/config.toml` (needed for the CLI to recognize the folder at all).
-- **`.env` is in the Write/Edit-tool deny list** (`.claude/settings.json`) —
-  intentional guard rail from an earlier session. Claude Code can't write/edit
-  it via the Edit/Write tools; a terminal command (`cat > .env <<EOF`) is not
-  blocked by that same rule and was used instead, with the user's explicit
-  go-ahead each time secrets were involved (anon key, then a CLI personal
-  access token used transiently for login/deploy, never written to disk).
+## Operational gotchas (still live)
+- **`.env` is in the Edit/Write deny list** (`.claude/settings.json`) — deliberate.
+  Use a terminal heredoc (`cat > .env <<EOF`) with Ben's explicit go-ahead when a
+  secret is involved; never echo secrets into chat or commit them.
+- **`supabase link` fails on this OneDrive folder** (`PlatformError: AlreadyExists
+  … supabase\.temp`). Skip `link`; pass `--project-ref fraihyghvkrzkbmxqfil` on
+  every CLI command. `supabase init` already ran.
+- **Keep repo side-effects out of `setState` updaters** — StrictMode double-invokes.
 
 ## Next step
-1. Migration 0003 is run (2026-07-14). Still need to verify the new
-   Goals/Tasks CRUD live in-browser on both Business and Family (add a goal +
-   task, check off, clear-done) — blocked on your passkey for me to do it
-   myself. Confirm Kurt's "add a task to …" / "add a weekly/monthly goal to …"
-   voice commands land the same real data, plus the new "mark ... done" /
-   "what's on my list" commands, and give Arnold's "another set" / "how am I
-   doing" a try on Workouts. Also just listen to a couple of replies — the
-   catchphrase/interjection variety is untested by ear.
-2. Everything else from the Business/Family scoping outline still waits for
-   your review and call: Shopify read-only dashboard (Edge Function), Facebook
-   Ads Manager view, Google Calendar OAuth + Edge Function, Omnisend (blocked
-   on an account/key), supplier/inventory tracker, and the Aurelius text persona.
-3. User wants a pass on "personal touch / user-friendliness" polish — no specific
-   list yet, TBD together next session (UI copy, empty states, onboarding feel,
-   whatever stands out when using it day-to-day).
+1. Verify Goals/Tasks CRUD live in-browser on Business + Family (add goal + task,
+   check off, clear-done) — needs your passkey. Same pass: Kurt's "add a task/goal
+   to …", "mark … done", "what's on my list"; Arnold's "another set" / "how am I
+   doing". Listen to a few replies — catchphrase variety is untested by ear.
+2. Business/Family scoping outline still awaiting your review: Shopify read-only
+   dashboard, Facebook Ads view, Google Calendar OAuth, Omnisend (needs account),
+   supplier/inventory tracker, Aurelius text persona.
+3. "Personal touch / user-friendliness" polish pass — scope TBD together.
 
 ## Open decisions
-- ~~Final tech stack~~ — confirmed.
-- ~~Which section first~~ — Groceries (done).
-- ~~Auth method~~ — device passkeys (built & verified end-to-end).
-- ~~Realtime sync subscription for groceries~~ — wired & verified end-to-end.
-- ~~Goals/tasks CRUD for Business + Family~~ — built (2026-07-03), pending your
-  live-browser verification pass.
-- Business: Shopify metrics/cadence, Facebook Ads scope (view-only vs.
-  pause/budget control), Omnisend account status, supplier-tracker fields/import
-  source — all still your call per the scoping outline.
-- Family: Google Calendar scope (read-only vs. write-back), which calendar(s) —
-  still your call.
-- Background photos are local-only (this device) — revisit if cross-device
-  photo sync matters enough to justify a Supabase Storage bucket.
+- **Business:** Shopify metrics/cadence; Facebook Ads scope (view-only vs.
+  pause/budget); Omnisend account status; supplier-tracker fields/import source.
+- **Family:** Google Calendar scope (read-only vs. write-back), which calendar(s).
+- **Background photos** are local-only (this device) — revisit only if cross-device
+  photo sync justifies a Supabase Storage bucket.
