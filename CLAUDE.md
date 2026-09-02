@@ -151,6 +151,7 @@ until checked on the desktop.
 - **Transcripts sync to Anthropic servers** while connected. Execution and file
   access stay local, the conversation does not — don't paste keys (anon key,
   service-role key, CLI tokens) into a remote session.
+
 ## Tech stack (CONFIRMED 2026-06-28)
 The app must: install on Android and Chromebook, sync in real time across devices,
 and talk to several APIs. Confirmed stack:
