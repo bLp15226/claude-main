@@ -94,63 +94,58 @@ voice, the Three Laws, sign-off authority.)
   PreToolUse hook. For the PowerShell tool, add `| Select-Object -Last 40`
   yourself. Prefer plain text over pasted PDFs/screenshots when one exists.
 
-## Remote Control — desktop ↔ phone (added 2026-09-02, corrected same day)
-Drive a Claude Code session running on the desktop from the Claude phone app.
-Claude keeps running locally the whole time — local filesystem, MCP servers,
-`.env`, the Supabase CLI all stay on the desktop; the phone is just a window
-into it. **Not file sync:** there's no copy of the repo on the phone and nothing
-flows back. That's the point — the work never leaves the desktop, so there's
-nothing to merge when you get home. The opposite of Claude Code on the web,
-which runs in a throwaway cloud container and can only return work over git.
+## Remote Control — desktop ↔ phone (VERIFIED WORKING 2026-09-02, CLI 2.1.259)
+Work from the phone while everything executes on the desktop. Files land in
+`C:\Users\blpin\OneDrive\Desktop\Claude.MD` as you go, so when you get home
+there is nothing to fetch, merge, or reconcile. This is the opposite of Claude
+Code on the web, which runs in a cloud container and can only return work by
+pushing a `claude/*` branch.
 
-**Start it** — a *terminal* command, run from the project directory. It starts a
-session; typed at a Claude prompt it's just a message to Claude.
-- `claude --remote-control [name]` — **verified** in CLI 2.1.215. Interactive
-  session that's also reachable from the phone.
-- `--remote-control-session-name-prefix <prefix>` — verified; defaults to hostname.
-- `--permission-mode acceptEdits` — verified general flag. Worth adding so the
-  phone isn't a wall of allow-prompts.
-- `/remote-control` (or `/rc`) to hand off a session already running —
-  **unverified**; can't be checked from inside a session. Try before relying on it.
+**Daily routine:**
+1. Desktop: double-click `start-rc.cmd` in the project root (it `cd`s to its own
+   folder via `%~dp0`, then runs `claude rc`). Leave the window open.
+2. Desktop: press **space** in that window to show the QR code.
+3. Phone: scan the QR. Confirm with "run hostname" — must return `bLp`.
+4. Work from the phone. Come home to finished work already on disk.
 
-**Connect:** scan the QR, or Claude app → **Code** tab → pick the session
-(computer icon + green dot = online). Unverified — carried from the first draft.
+**Requirements:** logged in with the claude.ai Pro account (`/login` inside a
+session — Remote Control refuses an unauthenticated CLI). Laptop plugged in and
+lid open, or lid-close set to do nothing. Idle sleep is already `never` on both
+AC and DC (verified via `powercfg`), so only the lid is a risk.
 
-**Corrections — three claims in the first draft of this section were wrong.**
-It was written by a Claude Code *web* session, which runs in a cloud container
-and could not test any of them against this machine. Checked against the
-installed CLI (2.1.215) on 2026-09-02:
-- **`claude remote-control` server mode does not exist.** There's no such
-  subcommand; the full list is agents, auth, auto-mode, doctor, gateway,
-  install, mcp, plugin, project, setup-token, ultrareview, update. Only the
-  `--remote-control` *flag* is real. The "server sessions survive Ctrl+C for
-  ~4 hours" note went with it and is void.
-- **`--spawn worktree` does not exist.** There's no `--spawn` flag at all.
-- **Auto-connect is NOT on.** `remoteControlAtStartup` is in neither
-  `C:\Users\blpin\.claude\settings.json` nor `~/.claude.json` (which holds only
-  `remoteControlUpsellSeenCount` / `remoteControlSurfacesSeen` — "prompt seen"
-  counters, not the setting). Pass the flag explicitly.
+**The trap that cost an hour — starting the session from the wrong place.**
+A session started from the *top level* of the phone's Code tab is a CLOUD
+session in a container, even while the desktop shows `Connected`. It looks
+identical, reports success, and writes nothing you will ever see. Two tells:
+- `hostname` returns `vm` instead of `bLp`.
+- It talks about pushing a branch or opening a PR. A desktop session never needs
+  to push; it writes to disk.
+Also, commits from a cloud container carry a `+0000` timezone offset; this
+machine is CDT. `git log --format='%ai'` exposes it instantly.
+**The reliable entry point is the environment URL the server prints:**
+`https://claude.ai/code?environment=env_...` — that `environment=` parameter is
+what pins the session to this desktop. The id changes every restart, so use the
+spacebar QR rather than saving the link.
 
-**Lesson:** a web session can't verify anything about this machine. Treat its
-claims about local config, installed versions, and CLI surface as hypotheses
-until checked on the desktop.
+**Verified behavior (2.1.259):**
+- `claude rc` — the command. Prompts to enable, then asks spawn mode.
+- Spawn mode `same-dir` (default, what we use) vs `worktree`. Worktree isolates
+  each session in its own git worktree, which re-creates the merge problem this
+  whole setup exists to avoid. Explicit flags: `--spawn=same-dir` / `--spawn=worktree`.
+  `w` toggles it live in the server window.
+- Capacity 32 concurrent sessions. They share one directory — two sessions
+  editing the same file will clobber each other.
+- `claude --remote-control [name]` also exists (single-session variant).
+- Sessions are named from the hostname unless `--remote-control-session-name-prefix`
+  is passed.
 
-**Gotchas:**
-- The local process must stay alive. Close the terminal, or let the desktop
-  sleep, and the session goes offline within seconds.
-- Project/local settings (`.claude/settings.json`, `.claude/settings.local.json`)
-  *ignore* a `true` for `remoteControlAtStartup` — by design, so a checked-in
-  file can't switch Remote Control on for everyone who opens the repo. They only
-  honor a `false`. Don't "fix" this by committing the setting; it's a silent
-  no-op that looks like it worked.
-- Checked 2026-09-02: neither settings file sets `DISABLE_TELEMETRY` /
-  `DO_NOT_TRACK` / `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` /
-  `DISABLE_GROWTHBOOK` — each silently disables the feature-flag evaluation
-  Remote Control depends on, and is the usual reason it won't turn on.
-- `/plugin` and `/resume` are terminal-only; they don't work from the phone.
-- **Transcripts sync to Anthropic servers** while connected. Execution and file
-  access stay local, the conversation does not — don't paste keys (anon key,
-  service-role key, CLI tokens) into a remote session.
+**Provenance note — three corrections in this file were themselves wrong.**
+On 2026-09-02 Claude "corrected" this section to say server mode, `--spawn`, and
+the 32-session cap did not exist. All three were real; the claims came from
+running `--help` against a **2.1.215** binary inside Claude's sandbox, which is a
+frozen overlay and not this machine. The original phone-written notes were
+substantially right. Lesson: `--help` output proves things about *the binary that
+ran*, not about the version installed here. Check the version first.
 
 ## Tech stack (CONFIRMED 2026-06-28)
 The app must: install on Android and Chromebook, sync in real time across devices,
