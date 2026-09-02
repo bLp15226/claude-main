@@ -75,6 +75,57 @@ voice, the Three Laws, sign-off authority.)
 - Tone: direct and casual, skip the filler.
 - When something's ambiguous, ask one clear question instead of guessing.
 
+## Remote Control — desktop ↔ phone (added 2026-09-02)
+Drive a Claude Code session running on the desktop from the Claude phone app.
+Claude keeps running locally the whole time — local filesystem, MCP servers,
+`.env`, the Supabase CLI all stay on the desktop; the phone is just a window
+into it. Not the same as Claude Code on the web, which runs in a throwaway
+cloud container with none of that.
+
+**Start it** (from the project directory — the startup trust dialog never saves
+trust for the home dir):
+- `claude --remote-control` — normal interactive session that's also reachable
+  from the phone. Type in either place.
+- `/remote-control` (or `/rc`) — hand off a session that's already running;
+  carries the conversation history over.
+- `claude remote-control` — server mode. The terminal becomes a server you
+  don't type into, serving many sessions from one process (default cap 32).
+  Spacebar toggles the QR code. Worth `--name "PHC Dashboard"` and
+  `--permission-mode acceptEdits` so mobile isn't a wall of allow-prompts.
+
+**Connect:** scan the QR, or open the Claude app → **Code** tab → pick the
+session (computer icon + green dot = online). `/mobile` prints an app-download
+QR if the app isn't installed yet.
+
+**Auto-connect for every session — NOT yet turned on (2026-09-02).** Ben asked
+for it, but it can only be set on his own machine, so it's his to flip:
+`/config` → **Enable Remote Control for all sessions**, or
+`remoteControlAtStartup: true` in `C:\Users\blpin\.claude\settings.json`.
+**Gotcha:** project/local settings (`.claude/settings.json`,
+`.claude/settings.local.json`) *ignore* a `true` here — by design, so a
+checked-in file can't switch Remote Control on for everyone who opens the repo.
+They only honor a `false`. Don't "fix" this by committing the setting; it's a
+silent no-op that looks like it worked.
+Checked 2026-09-02: neither settings file in this repo sets it, and neither
+sets `DISABLE_TELEMETRY` / `DO_NOT_TRACK` /
+`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` / `DISABLE_GROWTHBOOK` — each of
+those silently disables the feature-flag evaluation Remote Control depends on,
+and is the usual reason it won't turn on.
+
+**Gotchas:**
+- The local process must stay alive. Close the terminal and the session goes
+  offline within seconds.
+- Server-mode sessions survive Ctrl+C for only ~4 hours — `claude
+  remote-control` in the same directory brings them back inside that window,
+  nothing after it.
+- `--spawn worktree` gives each session its own git worktree. Untested against
+  OneDrive, which already fights the Supabase CLI's temp dirs (see Auth) — fall
+  back to the default `same-dir` if it misbehaves.
+- `/plugin` and `/resume` are terminal-only; they don't work from the phone.
+- **Transcripts sync to Anthropic servers** while connected, so devices stay in
+  sync. Execution and file access stay local, the conversation does not — don't
+  paste keys (anon key, service-role key, CLI tokens) into a remote session.
+
 ## Tech stack (CONFIRMED 2026-06-28)
 The app must: install on Android and Chromebook, sync in real time across devices,
 and talk to several APIs. Confirmed stack:
