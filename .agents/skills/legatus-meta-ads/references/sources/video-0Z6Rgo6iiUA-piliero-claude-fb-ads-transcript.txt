@@ -1,0 +1,1536 @@
+[00:00] This is the definitive course for Claude
+[00:02] and Facebook Ads. Across our portfolio
+[00:04] of over 100 brands, we use Claude on a
+[00:07] day-to-day basis to integrate directly
+[00:09] with Facebook Ads. Everything I'm about
+[00:11] to teach you step-by-step is from the
+[00:12] internal processes that we've created
+[00:14] for our clients at The Moonlighters.
+[00:16] From my perspective, if you learn how to
+[00:18] integrate this now, you're going to be
+[00:20] leaps and bounds ahead of your
+[00:21] competitors. You'll have workflows that
+[00:22] save you time, allow you to produce more
+[00:24] creative fast and very cheap. You'll
+[00:26] have anomaly detection so you don't
+[00:28] overspend or waste your ad spend, and
+[00:30] you'll even know when to scale your
+[00:32] accounts. And everything is set up in a
+[00:33] foundational way. We all know that every
+[00:36] large language model gets better and
+[00:37] better and better. Claude 6 months from
+[00:39] now and a year from now is going to be
+[00:41] 10 times stronger than it is today.
+[00:44] Setting the foundations now, building
+[00:46] the skills now, building the workflows
+[00:48] and integrations today will allow you to
+[00:51] exponentially improve as the time goes
+[00:54] on and as all of these systems get
+[00:56] better. We're going to be starting at
+[00:58] the very beginning and going
+[00:59] step-by-step through a very advanced
+[01:02] curriculum. First, we're going to start
+[01:03] with the basic setup. I'm going to show
+[01:05] you how to integrate Claude into your
+[01:07] Facebook account right away. This is
+[01:08] only going to take a few minutes. Next,
+[01:10] we're going to go into our basic
+[01:12] capabilities. So, I'm going to show you
+[01:13] really how to prompt this thing, how to
+[01:15] get some good information out of it, and
+[01:17] how to ask the questions that you might
+[01:18] just want to ask. There's a certain way
+[01:20] to do this and there's certain
+[01:21] permissions that are going to help make
+[01:23] this even easier to do. Next, we're
+[01:24] going to get into reporting. Now, when
+[01:26] it comes to reporting, I'm going to show
+[01:27] you some prompts that you could use so
+[01:29] you could build repeatable reports that
+[01:31] allow you to see the most critical
+[01:33] things that you're looking for
+[01:34] throughout your business. After that,
+[01:36] I'm going to show you how to schedule
+[01:37] reports. This is going to really help
+[01:39] get a debrief on what's going on in your
+[01:40] ad account both creatively and just from
+[01:43] an overall business holistic
+[01:44] perspective. From there, I'm going to go
+[01:45] ahead and start building stuff. We're
+[01:47] going to build anomaly detectors and
+[01:49] winning detectors. These are going to be
+[01:51] two things that are really going to set
+[01:52] the foundations to let you understand
+[01:54] how things can be built within the
+[01:57] integration between Claude and Facebook.
+[01:59] Think of this as someone who's
+[02:00] monitoring your account at regular
+[02:02] intervals and warning you when things
+[02:04] are going in the wrong direction. We
+[02:05] generally want to set these up to avoid
+[02:07] overspending or wasted ad spend in any
+[02:10] case. Winning detection would do the
+[02:11] exact opposite. It would tell us when we
+[02:13] need to do more of something. Next,
+[02:15] we're going to connect our additional
+[02:16] business information. This is going to
+[02:18] be connecting beyond just Facebook ads.
+[02:21] So, in many cases, it's going to be
+[02:22] Shopify or whatever service provider you
+[02:25] use. This is just getting things like
+[02:26] cost of goods and critical information
+[02:28] in so that Claude has more context to
+[02:31] actually help you think through your own
+[02:33] decisions. It's very critical here to
+[02:35] understand that with just looking at
+[02:36] Facebook ads in a silo, Claude is
+[02:38] actually quite limited as to what it
+[02:40] could understand. We have to give Claude
+[02:42] a ton of context for it to know what to
+[02:44] pull and know what you're actually
+[02:45] talking about. After this, we're going
+[02:47] to build some fun stuff. This is where
+[02:48] really the ball gets rolling. This is
+[02:50] where most people will find the most
+[02:52] value both short-term and long-term.
+[02:54] We're going to build creative
+[02:55] recommendation tool that's going to show
+[02:56] you your winners and your potential
+[02:58] winners. This is all going to be
+[02:59] rule-based and prompt-based. There's
+[03:01] going to be multiple prompts you need to
+[03:02] set up. And then again, we can schedule
+[03:04] these reports using some of the skills
+[03:05] we learned earlier in the course. We're
+[03:07] also going to build creative workflows.
+[03:08] So, this builds upon creative
+[03:10] recommendations. And this is when we
+[03:11] take those recommendations or potential
+[03:13] ads and we actually build them into
+[03:15] auto-generated AI workflows. Think of
+[03:18] this as generating images with whatever
+[03:20] your favorite tool is, generating
+[03:22] scripts, generating briefs. I'm also
+[03:23] going to talk a lot about future
+[03:25] workflows and I think so everybody
+[03:26] really understands this. Future
+[03:28] workflows are going to be the most
+[03:29] important case for everybody. But if you
+[03:31] don't build one through nine here,
+[03:33] you're really going to put yourself at a
+[03:34] massive disadvantage. In fact, you won't
+[03:37] be able to build future workflows
+[03:38] without building your original starting
+[03:41] workflows. Future workflows are
+[03:42] essentially the future of everything
+[03:44] that I'm talking about here. This is
+[03:46] what's going to allow you to build and
+[03:47] build and build and really stack
+[03:50] multiple workflows in your business that
+[03:52] will eventually either replace employees
+[03:54] or or allow your current team to be way
+[03:56] more efficient. Finally, I'm just going
+[03:58] to cap off with current day limitations,
+[04:00] understanding that many of these
+[04:01] limitations are going to be completely
+[04:03] eradicated soon because Claude's going
+[04:05] to get better, Facebook's integration's
+[04:07] going to get better, but right now there
+[04:09] are some limitations that you need to be
+[04:10] aware of because as of this moment right
+[04:12] now, Claude is not as good as a regular
+[04:15] media buyer or a growth director. Okay,
+[04:17] to set up this integration, the very
+[04:19] first thing we're going to do is go into
+[04:21] Claude and click on this toolbox which
+[04:23] says customize. From here, we're going
+[04:25] to click on connectors and then we're
+[04:27] going to click this plus button and
+[04:28] click add custom connector. I'm just
+[04:30] going to call this the Facebook Ads MCP.
+[04:32] You can call this whatever you want. And
+[04:33] then you're going to paste in https:
+[04:35] //mcp.facebookads.com/ads.
+[04:38] You then click add from here
+[04:42] and you'll see the meta or the Facebook
+[04:45] logo automatically show up. Now, it
+[04:47] might automatically connect for you. If
+[04:49] it doesn't, just click connect like so.
+[04:50] In this case, because we use this, I
+[04:52] just have to click reconnect. In your
+[04:54] case, you might just need to click the
+[04:56] actual business manager that you want to
+[04:58] assign to Claude. And then you'll just
+[04:59] be able to click connect. Once you do
+[05:01] this, we now have our first look at all
+[05:03] of our tool permissions. Now, mine are
+[05:05] already set to custom, but just to make
+[05:07] this really easy for you, make sure
+[05:08] everything for now is on needs approval.
+[05:11] If everything's on needs approval, it
+[05:13] means the very first time that you run
+[05:15] something that actually needs approval,
+[05:17] it's going to ask you if you want to
+[05:19] move it to always allow. There are
+[05:21] absolutely some things I'm totally
+[05:22] comfortable always allowing and there's
+[05:24] other things I'm totally not. For
+[05:26] example, I don't want Claude to
+[05:27] automatically be allowed to edit my
+[05:29] budgets, change my ads, or change
+[05:31] critical details. I want that always to
+[05:33] be confirmed with me. But I'm cool with
+[05:35] Claude, for example, getting ad
+[05:37] insights, which is why I have this on
+[05:38] always allow. As a general rule of
+[05:40] thumb, all of the insights can easily be
+[05:42] moved to always allow, but for now, just
+[05:44] to keep your life easy, keep it on needs
+[05:46] approval for now, and then you're going
+[05:48] to be able to select always allow later.
+[05:50] So, once we've done this, we can go back
+[05:52] to Claude and we could actually enable
+[05:54] the MCP. So, we can click this plus
+[05:56] button right here, hover over
+[05:57] connectors, and you should see the
+[05:59] Facebook Ads MCP is selected. Now, once
+[06:02] we do this, we just need to prompt
+[06:03] Claude to actually see if we have access
+[06:07] to this MCP. As of right now, around 10
+[06:09] to 20% of total ad accounts have access
+[06:12] and if you don't have access, ask your
+[06:14] Facebook rep or just request directly
+[06:16] from support. I think this is going to
+[06:18] be rolled out to everyone hopefully by
+[06:19] the time this video is live. So, what
+[06:21] you should do from this point forward
+[06:23] now is figure out if Claude is in fact
+[06:26] connected to the ad account. Okay, so
+[06:28] the very first prompt we're going to use
+[06:30] is just to find out if we actually have
+[06:32] access and make sure our connection was
+[06:34] set up properly. I like to actually
+[06:36] prompt this exact thing cuz it tends to
+[06:38] find all the information in a really
+[06:40] simple way. Using the Facebook Ads MCP
+[06:42] that I just connected through the
+[06:44] connectors, please list out all of the
+[06:47] ad accounts that I have access to and
+[06:49] specifically call out the ad accounts
+[06:51] that have access to the MCP connection.
+[06:56] So, as we can see right away, it's
+[06:57] starting to pull in the MCP and this is
+[06:59] going to be an always allow. All right,
+[07:01] so this only took a minute here and we
+[07:03] can see I have a ridiculous 236 ad
+[07:06] accounts connected. These are all the
+[07:07] businesses that we work with and there's
+[07:09] only 20 of the 236 that are not
+[07:12] connected. So, yippee ki yay, 216
+[07:15] accounts are MCP enabled. So, all we're
+[07:17] going to do for this is we're just going
+[07:19] to pick one account and we're going to
+[07:20] use this as our example account
+[07:22] throughout everything. So, for our
+[07:23] purposes, I'm just going to be using one
+[07:25] account. I'm going to say, let's use the
+[07:26] account number and I find it a little
+[07:28] bit easier to use the actual account
+[07:30] number. It seems to be able to identify
+[07:32] it much quicker and as you can see in
+[07:34] this case, it's MCP enabled, queryable,
+[07:36] we're good to go. So, now that our setup
+[07:38] is done, let's go through some of our
+[07:39] basic capabilities. Now, when it comes
+[07:41] to basic capabilities, there's about a
+[07:43] thousand and one things that you can do,
+[07:45] but just so we understand the basis of
+[07:48] this, we could ask anything. And it even
+[07:50] gives us a few starting points in this
+[07:52] very first prompt. Now, just so we
+[07:54] understand, things that I might ask are
+[07:55] like, what was yesterday's ROAS and
+[07:59] spend?
+[08:02] And in many cases, when you do run a
+[08:04] single prompt, you're going to get the
+[08:05] option to either always allow or just
+[08:07] click allow once. Just be careful in
+[08:10] many cases. I have no problem using the
+[08:12] ads to get ad entities as an always
+[08:15] allow. This is just pulling information,
+[08:17] we're not pushing anything to Facebook.
+[08:19] So, we can see right away for this
+[08:20] account, we spent $960, we drove a 2.07
+[08:23] return on ad spend, that drove 13
+[08:25] purchases. I could ask anything and get
+[08:27] results really, really quickly. A quick
+[08:30] example of something that would be a
+[08:31] little bit more advanced, please plot
+[08:33] the last 30 days spend, ROAS, purchases,
+[08:37] impressions, and frequency in a very
+[08:39] simple table.
+[08:42] And just like mentioned before, we're
+[08:44] able to now see a very easy to
+[08:45] understand, easy to comprehend table
+[08:47] based on any of the metrics we had.
+[08:49] Where things start to get a little bit
+[08:50] more advanced is when we could actually
+[08:51] take and build upon this table. So, what
+[08:54] I'm just going to say here is, use this
+[08:56] data to actually build something that I
+[08:58] can visualize and understand more
+[09:00] easily. Make it slightly interactive,
+[09:02] but overall keep it pretty light and
+[09:03] simple.
+[09:04] Now, what I've asked here is quite
+[09:06] simple. I've said, take the data that
+[09:07] was already plotted and visualize it.
+[09:10] You could do this as advanced as you
+[09:11] would like or as simple as you would
+[09:13] like. I just want to show you how simple
+[09:14] it is to build something that's actually
+[09:15] really easy for us to interact and work
+[09:18] with. For example, here's a light
+[09:20] interactive dashboard with the last 30
+[09:22] days of data. Now, you can see here, I
+[09:24] have plots here by different charts, so
+[09:26] super easy for me to read and
+[09:27] understand. We can see in this case for
+[09:29] this brand, we ran a sale, that's why
+[09:30] ROAS gets so high, that's why spend gets
+[09:32] so high as well. And I can look at any
+[09:34] critical metric here as well. So, super
+[09:36] easy for us to grab this and pull it.
+[09:39] Now, I'm going to pause here for a
+[09:40] second and mention something that's
+[09:41] really important. You could obviously
+[09:43] play with this all day and you should.
+[09:45] Build the custom reports that you think
+[09:46] are most applicable to your business.
+[09:49] But, if you want the actual prompts, the
+[09:51] templates, the actual reporting setups
+[09:53] that we use here at the Moonlighters,
+[09:55] then you could always go and get them
+[09:56] inside school.com/facebook.
+[09:59] That's where we share all of our
+[10:00] internal SOPs. So, tutorials just like
+[10:03] this, breakdowns just like this are
+[10:05] great and really helpful. But, if you're
+[10:07] already in a position where you're
+[10:08] trying to up-level fast and you want to
+[10:10] make sure you're not looking at the
+[10:11] wrong things or missing things, then not
+[10:13] only do we have Claude friendly stuff
+[10:15] that is all broken down, but we also
+[10:17] have very, very critical breakdowns that
+[10:20] are used in more advanced reporting
+[10:22] platforms as well. You could steal all
+[10:24] of that inside again
+[10:25] school.com/facebook. There's always a
+[10:28] link in the first comment and in the
+[10:29] description. Now that we've built this
+[10:31] report, we need to figure out how can we
+[10:33] receive this report every single day.
+[10:36] Now, there's basically two use cases for
+[10:37] consistent reporting. First is
+[10:39] consistent, the second is large chunks
+[10:42] of data. So, what we're going to cover
+[10:43] really quickly is what I would do with
+[10:45] large chunks of data if I wanted to look
+[10:47] back at a very large analysis of
+[10:50] Facebook ads or really any ad platform
+[10:52] all in one. If I wanted to understand,
+[10:54] you know, what went on over a long
+[10:55] period of time, well, instead of maybe
+[10:57] breaking things down by day, I would ask
+[10:59] for something that is very similar, but
+[11:01] broken down by week. I would then ask
+[11:03] for significantly more metrics to
+[11:05] analyze the data and I would ask Claude
+[11:07] to start trying to find patterns in the
+[11:10] data for me. I'll show you an example of
+[11:12] this. I'm not going to do a 52-week
+[11:14] window because, to be honest, it's going
+[11:15] to take 10 minutes of me sitting here
+[11:17] waiting. But, if you wanted to pull
+[11:18] something like that, you could ask
+[11:20] something along these lines. This is
+[11:21] great. Now, I want you to do this broken
+[11:24] out by week for data over the last 20
+[11:27] weeks. After you do this, I want you to
+[11:29] include some sort of section that
+[11:30] actually analyzes the patterns of this
+[11:32] data. Also, feel free to include more
+[11:35] than just spend, rowas, purchases,
+[11:36] impressions, and frequency. Let's go
+[11:38] pretty advanced and detailed here.
+[11:44] Okay, so after just a few minutes here,
+[11:47] we now have a fully functional
+[11:49] lightweight reporting suite.
+[11:50] Essentially, we could see all of our
+[11:52] core metrics over any period of time. We
+[11:55] could toggle all of these at any time,
+[11:58] spend, frequency, CTR, whatever we want.
+[12:00] We can look for anomalies throughout
+[12:02] these. We have some of this
+[12:03] conditionally formatted by some weeks
+[12:05] that were really bad, some weeks that
+[12:07] were really good. And then, it's done a
+[12:09] pretty simple analysis. And I think some
+[12:12] of this analysis is pretty good. Now, I
+[12:14] want to give everybody a good warning
+[12:15] here. Without the context that we're
+[12:17] going to add later on, like connecting
+[12:19] additional business information in
+[12:21] number seven, this doesn't have a full
+[12:23] picture of how the business actually
+[12:25] functions. For example, it's not taking
+[12:26] into consideration that all of these
+[12:28] lower weeks, this business actually
+[12:30] thrives at a 0.8 incremental new
+[12:33] customer return on ad spend. Now, that's
+[12:34] some advanced stuff right there, but
+[12:36] it's not taking into account that even
+[12:37] though some of these weeks look low and
+[12:40] look really poor, it's just cuz they're
+[12:42] focused entirely on acquiring brand new
+[12:44] customers and not counting anything
+[12:46] else. So, you have to take all of these
+[12:48] analyses with a grain of salt. However,
+[12:51] these are pretty good callouts. The
+[12:53] business runs on promo spikes. The
+[12:55] baseline non-promo weeks are
+[12:57] structurally unprofitable. That's where
+[12:59] it's wrong. CPM has climbed steadily and
+[13:01] materially. This is a concerning trend.
+[13:03] Now, this is true. We've seen CPMs go
+[13:05] from around $6, all the way up to around
+[13:08] $10. That's a really good callout.
+[13:10] Frequency is creeping up, so it drifted
+[13:12] down. It's now pushed back up, and the
+[13:14] funnel is leaking at the site, not the
+[13:16] ad. Conversion rate, which is purchases
+[13:18] divided by clicks, is brutal in normal
+[13:19] weeks, frequently under 1%, and then it
+[13:22] jumps super high during promos. Again,
+[13:24] it doesn't have all the the here, but
+[13:25] these are pretty good callouts for a
+[13:27] general run of a report. So, at this
+[13:29] point, I think it's safe to say that we
+[13:30] understand the basic capabilities of
+[13:32] using Claude integrated with Facebook
+[13:34] Ads. We also might be halfway there when
+[13:36] it comes to basic reporting. Even though
+[13:39] this reporting looks really, really
+[13:41] advanced, it's actually pretty basic.
+[13:43] You can get all this information inside
+[13:44] of Facebook already, and there's nothing
+[13:46] really special going on here. It's cool
+[13:48] to run, it feels good to run, it looks
+[13:51] good, but if you do this every day,
+[13:52] you're just going to be looking at the
+[13:53] same information. There's really going
+[13:55] to be no trend analysis going on here if
+[13:58] we're just adding in next week, next
+[14:00] week, next week. Where things start to
+[14:01] get more and more valuable is when we
+[14:03] start to schedule our reporting. So,
+[14:04] this was the other half of reporting,
+[14:06] which is consistent scheduled reporting.
+[14:08] Now, I'm going to show you how to build
+[14:10] and stack on your reports so you can get
+[14:12] daily digest from your ad account, which
+[14:14] are really, really important. A lot of
+[14:15] people build things with Claude and
+[14:17] ChatGPT, such as daily digest that
+[14:19] basically give them no value. They give
+[14:21] them some weird summary of their day,
+[14:23] what the weather's going to be like, the
+[14:25] emails that they've gotten over the last
+[14:27] 24 hours, but when it comes to the money
+[14:29] that you're spending on your ads, this
+[14:30] could be one of the most critical, if
+[14:33] not the most critical, daily digest that
+[14:36] you get. Now, I encourage most people to
+[14:38] do this inside of Slack or wherever they
+[14:40] get their information. You could set
+[14:42] this up anywhere. I'm just going to show
+[14:44] you how to do the basics of it inside of
+[14:46] Claude. So, to do this, we're going to
+[14:47] bring ourselves back to the daily
+[14:49] report. Excellent. Now, I just want to
+[14:51] keep things a little bit more simple.
+[14:52] Build a daily report just like at first.
+[14:55] Keep the tons of metrics that you've
+[14:58] added in there, I really like those, but
+[14:59] just do it for this rolling month. For
+[15:02] example, if you're pulling this report
+[15:03] in May, I want to see this for May to
+[15:06] date. If you're pulling it for June, I
+[15:08] want to see it from June 1st to the
+[15:10] current date. This is a monthly tracker.
+[15:13] So, what this is going to create for us
+[15:14] essentially is what we see here, but
+[15:16] only thinking about the current month.
+[15:18] Okay, and now that we have our
+[15:19] month-to-date breakdown, I'm going to
+[15:21] give it some context on my goals. So,
+[15:23] let me provide you with some context on
+[15:25] my goals. My return on ad spend target
+[15:27] is a 1x during non-promo periods, and
+[15:31] it's around a 4x during promo periods.
+[15:34] All in blended, as long as the full
+[15:36] month is tracking to a two return on ad
+[15:38] spend, we're doing good. Let's consider
+[15:39] this the king goal of my account, and
+[15:42] let's include this in the reporting.
+[15:44] Now, again, this is just an example of
+[15:46] how we can start to interact and build
+[15:49] this for our own business. This is
+[15:51] technically going to be hitting some of
+[15:52] the principles on connecting additional
+[15:54] business information. So, we've at this
+[15:56] point hit up our setup, our basic
+[15:57] capabilities, and our basic reporting.
+[16:00] Now, it's time to build a scheduled
+[16:02] report.
+[16:10] So, as this prompt is completing and
+[16:12] we're building out that report one last
+[16:14] time, we're now going to set this up in
+[16:15] a way where it is scheduled and sent to
+[16:18] us every single day. So, now that we've
+[16:20] created our first round of our
+[16:22] reporting, and now keep in mind, do this
+[16:24] at your will, however you want to
+[16:25] customize your reporting, go for it. The
+[16:28] next thing we're just going to prompt is
+[16:30] something simple. We just want to ask it
+[16:31] to save this as an artifact. And what
+[16:34] that's going to do is save it as a
+[16:35] standalone HTML artifact that we can
+[16:38] open, download, or share. There's going
+[16:40] to be another build that we do from
+[16:42] here, but just so we all understand the
+[16:44] basis of this, this is then going to
+[16:46] create a month-to-date ROAS tracker as
+[16:50] we've prompted. So, whatever you ask in
+[16:52] that report is then going to be built as
+[16:54] a custom artifact. An artifact in
+[16:56] Claude's eyes is literally everything we
+[16:58] just built, custom coded for you, and
+[17:00] then you could edit it and adjust it at
+[17:03] any time. We're actually not going to be
+[17:04] using this exact artifact, and there are
+[17:06] a hundred different ways that you can do
+[17:08] this. do this through Claude code, you
+[17:10] can do this through Claude co-work, and
+[17:12] so on. I'm just going to show you the
+[17:13] easiest way to do this for now.
+[17:15] Understand that my expertise is not in
+[17:17] coding. My expertise is in Facebook ads,
+[17:19] and this is just the easiest way to get
+[17:22] the 99%
+[17:23] of what we need done. I don't care about
+[17:26] perfection. I care about getting really
+[17:28] good data inputted so that we can make
+[17:31] informed decisions for the advertising
+[17:33] accounts that we manage. From this point
+[17:35] forward, once we've created this HTML
+[17:37] file, we're then just going to click
+[17:39] copy right here. This is just going to
+[17:40] copy all of this HTML base code right
+[17:43] here. Once we've copied our HTML, we're
+[17:45] then going to bring this into Claude
+[17:47] Co-work. Now, we could technically do
+[17:49] this in Claude Code as well. Co-work is
+[17:51] just going to be really easy. So, all
+[17:54] we're doing is we're opening up our
+[17:55] Claude Desktop app. If you do not have
+[17:58] that, Google it, download it, it's free.
+[18:01] Open it up and connect it to your Claude
+[18:02] account. Once you do that, you can go
+[18:04] ahead and click live artifacts here on
+[18:06] the left-hand side. So, this is going to
+[18:07] be under Claude Co-work, live artifacts.
+[18:10] Click new artifact, create with Claude.
+[18:12] It's going to ask an auto prompt this. I
+[18:14] want to make a live artifact, explain
+[18:16] what they are, then figure out look at
+[18:18] my MCP servers. It's going to see all
+[18:20] the MCP servers that we have already set
+[18:22] up, and it's going to probably ask me a
+[18:23] question. So, it knows that I have the
+[18:25] Meta Ads connection. I'm going to click
+[18:26] one here, and we're going to do this to
+[18:29] be a month-to-date reporting dashboard.
+[18:33] How will we open it? We will open this
+[18:35] multiple times a day. It seems like it's
+[18:37] hitting more questions. We just want to
+[18:38] skip through this and give it the HTML.
+[18:40] So, we're going to skip this. We're
+[18:41] going to skip this, and we're just going
+[18:43] to skip this. And just before this gets
+[18:46] out of hand, I'm just going to stop
+[18:48] Claude here, and I'm going to tell it
+[18:50] exactly what I'm looking for. Using the
+[18:52] Facebook Ads MCP, build this exact HTML
+[18:56] live artifact that I've attached below.
+[18:58] Do this only for the account
+[19:01] and then we're literally just pasting
+[19:03] our entire HTML, and we're clicking go.
+[19:06] It's then going to be able to parse this
+[19:07] out and build this automatically for us.
+[19:10] To save us all a few minutes here, I've
+[19:12] already done this. And we go to our live
+[19:14] artifacts here, we can see we now have
+[19:17] my already built live artifact. Now, the
+[19:20] really cool thing about this is I could
+[19:22] do two things from this point forward.
+[19:24] A, I can click reload, which is going to
+[19:26] re-pull with the live month data, or I
+[19:29] could ask chat anything about this. So,
+[19:32] because I've already built this, I could
+[19:33] add or change or add layers or do
+[19:36] whatever I want to this already. It's
+[19:39] using all the data from the MCP, which
+[19:41] makes it all super, super easy to modify
+[19:44] and change. So, the next part of this
+[19:46] naturally is getting this to be
+[19:48] scheduled. So, we're just going to ask
+[19:49] Claude something really simple. This is
+[19:50] all great. Can you please schedule this
+[19:53] to be updated and sent to me every
+[19:56] single day at 9:00 a.m.
+[19:59] Let's just say for this sake, I just
+[20:01] want this update to be in Co-work, but
+[20:03] wherever you want it, it doesn't matter.
+[20:04] Maybe a Slack DM, an email, it doesn't
+[20:06] matter. We're using Eastern Time.
+[20:07] Excellent, and we have the scheduled
+[20:09] task. And pretty straightforward, this
+[20:10] is completely set. So, now if we go over
+[20:13] on the left-hand side to scheduled
+[20:15] tasks, we'll now see that I have my
+[20:17] month-to-date realized tracker right
+[20:19] here. We have all the instructions, and
+[20:21] this will now be sent to me every single
+[20:23] day. Now, just to show you what this
+[20:24] looks like, I can click run now. It's
+[20:26] then going to pull all of the data
+[20:27] automatically. So, it's going to run the
+[20:28] tools just like we did before, and it's
+[20:31] going to spit back that same chart in
+[20:33] just a few minutes. Obviously, the
+[20:34] advantage of scheduling this is it does
+[20:36] it. You don't even think or know that
+[20:38] it's happening in the background. As
+[20:39] long as you have Claude open, the
+[20:41] desktop app open, this is going to run.
+[20:44] Excellent. So, we have officially
+[20:46] wrapped up our first four sections. We
+[20:48] know how to set this up, we understand
+[20:50] the basic capabilities, we understand
+[20:52] basic reporting, and we have scheduled
+[20:53] reporting set up. These foundational 1 2
+[20:56] 3 and 4 really lead easily into the rest
+[21:00] of this course. Anomaly detection and
+[21:02] winner detection are going to be one in
+[21:04] of the same, and the important part is
+[21:06] that we've already built the foundation
+[21:08] for all scheduled and anomaly detection.
+[21:12] So, to kick off our anomaly detection,
+[21:13] we're actually going to build this again
+[21:15] inside of Claude Co-work. Now, you can
+[21:18] absolutely build this in Claude Code if
+[21:20] that's where you're more comfortable. We
+[21:22] have these built in both for all of the
+[21:24] brands that we work with. Just in this
+[21:26] case, it's really easy to build this
+[21:28] within Co-work, especially if you're not
+[21:29] totally familiar, because it's going to
+[21:31] act a little bit more in a user-friendly
+[21:33] way. So, we're going to prompt something
+[21:34] pretty straightforward. Using the
+[21:36] Facebook Ads MCP connector, I want you
+[21:38] to build an anomaly detector. This
+[21:40] should account for any significant
+[21:43] change over two standard deviations
+[21:46] across the brand that we are looking at.
+[21:48] The purpose of the anomaly detector is
+[21:51] to detect both good and bad anomalies in
+[21:54] my ad account. I would ideally like this
+[21:56] to be run four times per day, and
+[21:59] specifically, we're looking at core
+[22:01] metrics like spend, ROAS, CPA. Oh, we
+[22:05] also care about secondary metrics like
+[22:07] spikes in CPMs.
+[22:10] Okay, now this is a case where I
+[22:11] definitely want this to be built into my
+[22:13] Slack and DM. I want to get this
+[22:15] notification. I want to be warned when
+[22:17] something is actually happening that's
+[22:19] bad. The lookback window when we should
+[22:21] calculate the baseline, this is going to
+[22:23] be interesting. We want to know about
+[22:25] daily changes, but also reference 7-day,
+[22:29] 3-day, and 14-day changes.
+[22:33] At what level should anomalies be
+[22:34] detected? They should be detected
+[22:36] probably just at the account level would
+[22:39] be most critical, but we'll also go
+[22:40] campaign level. What ad accounts should
+[22:42] be monitored? And in good fashion here,
+[22:44] it could not find the anomaly detection
+[22:47] channel, which is because I haven't
+[22:48] created one for this particular anomaly
+[22:51] alert. So, I'm just going to have it DM
+[22:52] it directly to me. Should anomalies be
+[22:54] flagged for significance? Yep. And then
+[22:56] again, in good fashion, it is
+[22:58] automatically requesting to schedule the
+[23:00] task, so we'll go ahead and schedule
+[23:02] that. In this case, we're running it at
+[23:03] 6:00 a.m., 11:00 a.m., 3:00 p.m., and
+[23:05] 7:00 p.m. Really just to call out any
+[23:07] anomalies possible. Okay, so now that we
+[23:09] pull into Slack, we can see this is the
+[23:11] message I got. We have the anomaly
+[23:13] detection, we have the account ID, the
+[23:15] target date, and we have obviously just
+[23:17] a sample here of all the metrics,
+[23:19] yesterday what happened, any deltas that
+[23:21] we've put together. Now, I don't love
+[23:23] this exact anomaly detection. There's
+[23:26] way better versions of this that we can
+[23:28] create, but I just want to give you the
+[23:30] gist of this is what you can actually
+[23:32] create. It is so easy at this point to
+[23:35] just highlight this, take a screenshot,
+[23:38] and get a different version of it that's
+[23:39] way easier for you to actually digest.
+[23:42] Okay, now we understand the basics of
+[23:43] how to build any anomaly detector. This
+[23:46] is essentially just the point where we
+[23:48] can create any sort of pulse that's an
+[23:50] extra set of eyes on an account to make
+[23:52] sure things don't go haywire. After
+[23:54] this, we start to think about how can we
+[23:56] make good decisions, better decisions to
+[23:58] compound on our ad account or compound
+[24:00] on our entire business with winner
+[24:02] detections. So, winner detections are
+[24:04] going to function just like anomaly
+[24:06] detection, except they're going to go a
+[24:08] layer down at the ad level, and they're
+[24:10] specifically going to help us with
+[24:11] future workflows. So, for our winner
+[24:14] detection, what we're going to do here
+[24:16] is we can actually use the same Facebook
+[24:19] Ads anomaly detector, or we could just
+[24:21] take this exact same prompt that we did
+[24:23] last time, and we could build a new
+[24:25] section inside of Co-work or Claude
+[24:27] Code. Again, I'll say this for the 100th
+[24:29] time, use what you're most comfortable
+[24:32] in. Whether you're using Claude Code,
+[24:34] Claude Co-work, or even a different AI
+[24:37] tool, the actual function of what you're
+[24:40] doing is going to be similar, or if not
+[24:42] exactly the same. Okay, so for this
+[24:45] example, we're going to use the same
+[24:47] chat that we previously were building
+[24:49] in. The reason for this is actually
+[24:50] quite simple. When we're using the same
+[24:52] chat, it has all of the context of what
+[24:54] we've already created. Now, you don't
+[24:56] need to do this all of the time, but in
+[24:58] this case, we're going to be using the
+[24:59] same ad account. We're going to be using
+[25:01] a lot of the same skills that we've
+[25:02] already modified. And if you have gone
+[25:05] back and forth in this same chat to
+[25:07] modify how you'd like things to look,
+[25:09] what things you don't like, what metrics
+[25:11] you'd like, then it's going to have a
+[25:12] little bit more context on what you're
+[25:13] building. So, for this example here,
+[25:15] we're just going to build our second
+[25:16] prompt. I want you to now build a second
+[25:19] anomaly detector. Except this time,
+[25:21] we're going to be building it for
+[25:22] winning ads. So, I specifically want you
+[25:25] to look at the winning ads in my ad
+[25:27] account, which we'll define by any ad
+[25:29] that drives more than 5% of the total
+[25:32] campaign spend and is above my target
+[25:35] return on ad spend. For this example,
+[25:37] let's say my target return on ad spend
+[25:39] is one. As long as the ad is driving
+[25:41] over a 1x. I also want you to rule out
+[25:44] any sale periods which you've previously
+[25:46] looked at before. So, we could just
+[25:48] ignore days completely that have massive
+[25:50] spikes in revenue. And I'm talking like
+[25:53] 5x over baseline. The purpose of this
+[25:55] anomaly detector is to specifically pull
+[25:58] out the winning ads in the ad account.
+[26:00] So, I want a winning ads report that
+[26:03] pulls out the ad ID and any other
+[26:05] contextual information you can tell me
+[26:06] about the ad. Of course, I want the
+[26:08] baseline stats for this ad, but I'd also
+[26:10] like for you to pull these winning ads
+[26:13] based on 3 days of data, 7 days of data,
+[26:15] and 14 days of data. I'm not looking for
+[26:18] a single day spike. I'm looking for
+[26:20] chunks of data analysis so I can make
+[26:22] informed decisions. Okay, now this
+[26:25] prompt is quite long. Feel free to
+[26:26] adjust it how you see fit. The purpose
+[26:29] of this all in all is that we have a
+[26:32] single prompt that's going to give us a
+[26:35] big dump of information and then we can
+[26:37] narrow it down from there. By the way,
+[26:39] all of the prompts that I'm going
+[26:40] through, way more refined, the exact
+[26:43] artifacts, the exact prompts to build
+[26:45] this all for you is always inside
+[26:47] school.com/facebook. You could join at
+[26:49] any time. You could steal all these
+[26:51] prompts and leave the next day. It
+[26:52] doesn't matter. Okay, how often should
+[26:54] this report run? Once per day. Should
+[26:56] the report go? Yep, same as Slack.
+[26:58] Should we define the sale period day to
+[27:00] exclude? We'll just go here. That's
+[27:02] fine.
+[27:05] Okay, we can see this has finished up.
+[27:07] Let's take a look inside of Slack real
+[27:09] quick. So, we can see this is a massive
+[27:12] data dump that we've gotten here. Now,
+[27:13] obviously this might be too much for
+[27:15] you. It's definitely too much for me
+[27:16] right off the bat, but it does give me a
+[27:18] general idea of what's going on. The
+[27:20] cool thing is I can now curate this to
+[27:23] my specific business. Great example
+[27:25] here. Let's say here we have our
+[27:26] retention campaign up top here. This $50
+[27:30] represents 20% of the total campaign
+[27:32] budget. So, what I would obviously just
+[27:34] do here is I would just take this and
+[27:37] I'd say maybe I want to break this out
+[27:38] by campaign type. Maybe I want to break
+[27:41] out retention versus prospecting. So, I
+[27:43] don't have everything grouped together
+[27:45] here. Maybe I only want certain kinds of
+[27:47] ads like certain kinds of formats of ads
+[27:50] or ads that only have a specific naming
+[27:52] convention in them. Here's the good
+[27:53] thing that we see here. There's this
+[27:54] persistent winners across all three
+[27:56] windows. I think this is pretty cool.
+[27:58] Overall, this is solid for me to
+[28:00] understand generally what's going on.
+[28:01] Here's the miss that we have. We don't
+[28:03] have links. We don't have pictures. We
+[28:05] don't have images. So, everything you
+[28:07] would build on top of this would be to
+[28:09] enhance this data dive. Now, what I
+[28:11] would actually do here is I'd actually
+[28:13] like to see this in two different
+[28:14] places. So, don't get me wrong. It's
+[28:16] nice to have a report like this, but
+[28:18] this is overwhelming, right? I would
+[28:21] have to modify this report pretty
+[28:22] heavily. What I'd actually like here is
+[28:24] to build an artifact around this. So,
+[28:26] we're just going to tell Claude this is
+[28:27] pretty solid. Let's now just build a
+[28:29] persistent artifact around this.
+[28:31] Something that I can go in and reference
+[28:33] at any time. I think that it would also
+[28:35] be helpful to group things by campaign.
+[28:38] It currently looks a little bit
+[28:39] overwhelming in its current state. Keep
+[28:41] in mind that I'm looking for things to
+[28:43] be sorted by amount spent.
+[28:46] So, all we're going to now get with this
+[28:48] is just a slightly tidied up version of
+[28:50] what we've already built. Okay, great
+[28:52] example of how you can build absolutely
+[28:54] nothing of value if you don't prompt
+[28:57] properly. I clearly did not build the
+[28:59] right thing. So, we're just going to ask
+[29:00] Claude to actually just look at this for
+[29:02] us. Okay, it looks like something has
+[29:04] went wrong here. I've got no information
+[29:05] here. This is completely different than
+[29:08] the Slack report that you sent to me.
+[29:10] So, I'd like you to take screenshots of
+[29:12] your own artifact that you built here
+[29:14] and try to figure out what went wrong,
+[29:16] troubleshoot it, and create a new one.
+[29:18] And just like that, we now have our
+[29:20] winning ads report. Again, modify this
+[29:23] to your liking with the metrics that
+[29:24] matter the most for your business. Now,
+[29:27] I think some things that I would
+[29:28] probably add right in here right away
+[29:30] would be things like links to the actual
+[29:32] ads. If we could eventually pull images,
+[29:34] that would be huge. But really, just one
+[29:36] of the easiest things we can do is
+[29:37] instead of having us to then look for
+[29:39] what is this ad, can we then take this
+[29:42] ad and click a single link to then drive
+[29:44] us right to the ads manager to preview
+[29:46] it. Right? These are just easy things
+[29:48] that we can do that allow the entire
+[29:51] process to be much easier for ourselves.
+[29:53] Okay, so instead of tweaking this a
+[29:54] hundred times over now, we're just going
+[29:56] to keep this as is. Feel free to modify
+[29:59] to your liking. The most important part
+[30:01] of everything that we're about to hit is
+[30:03] going to be what happens after. All
+[30:04] we've set up to this point is our basic
+[30:07] setup, our basic capabilities of Claude
+[30:09] in the Facebook Ads MCP, how to set up
+[30:11] and schedule reports, and how to build
+[30:14] both anomaly detectors for negative
+[30:16] situations and winning ads. What we do
+[30:19] moving forward is literally tying it all
+[30:21] together, and this is how it becomes the
+[30:24] agent for your business. This is how you
+[30:26] actually grow your business fast and
+[30:28] actually produce more for your business
+[30:31] using Claude's code and the Facebook Ads
+[30:33] MCP. So, now moving on to number seven,
+[30:36] connecting additional business
+[30:37] information. This is the context that
+[30:40] that going to power all of the outputs.
+[30:42] 99% of people will have already stopped
+[30:45] watching this course at this point, so
+[30:46] consider yourself in the 1% that's going
+[30:49] to have a major advantage. At this
+[30:51] stage, our goal is to give Claude as
+[30:53] much information and context as
+[30:56] possible. This is going to deliver
+[30:58] significantly stronger outputs for
+[31:00] creative workflows and any other
+[31:02] workflows that we build after. So, for
+[31:05] number seven here, I'm going to load in
+[31:07] two very important pieces. The first
+[31:10] thing that I'm going to put in is going
+[31:11] to be the brand guidelines, and then the
+[31:13] second thing we're going to put in is
+[31:15] the output of our avatar building
+[31:17] prompt. Brand guidelines and avatar
+[31:19] building prompts, the exact ones that I
+[31:20] use are always in our school community
+[31:22] updated based on what's actually working
+[31:24] the best right now, but you could
+[31:25] probably put these together on your own.
+[31:27] So, to do this, we're going to build a
+[31:29] very basic skill inside of Claude. We're
+[31:31] going to click a new task here, and then
+[31:33] we're going to say, "Build a skill that
+[31:35] you could easily reference." This is
+[31:37] going to contain my brand guidelines and
+[31:40] my avatars for my brand. Then, we're
+[31:42] going to dump all the information, so
+[31:44] this is going to be the brand guidelines
+[31:46] first. Then, we're going to go into
+[31:48] another tab right here. We're going to
+[31:49] grab this avatar building sheet, just
+[31:51] make a quick copy of it. We usually dump
+[31:53] our brand guidelines right here per the
+[31:55] SOP. We drop this into a new context of
+[31:58] Claude, and we're just going to give
+[32:00] this in the highest model available.
+[32:02] We're going to drop this in. This goes
+[32:03] through a very extensive research
+[32:05] process. This is something that we've
+[32:07] built for a while. It works tremendously
+[32:09] well. Usually, this takes a few minutes
+[32:11] to run. So, as this is working, just so
+[32:13] everybody understands what this entire
+[32:14] prompt does, it basically scrapes the
+[32:17] entire internet, specifically forums and
+[32:19] Reddit, to get critical response and
+[32:21] drive customer avatar clusters. This is
+[32:24] really how marketing works in 2026 and
+[32:27] onwards, which is where you specifically
+[32:29] talk to an avatar. You build problem and
+[32:32] solution-oriented creative for that
+[32:34] avatar. And you can kind of see as this
+[32:36] is still going here, we have stage one,
+[32:38] which are 20 problems in the category.
+[32:39] So, it identified the category, it found
+[32:41] a bunch of competitors, and then it
+[32:43] found specific problems in this category
+[32:45] that are all over. And you could see all
+[32:47] the different places Useful Vitamins,
+[32:49] eBay, Goodreads, Fortune, Grooons, Team
+[32:51] Blind, Substack, all these different
+[32:53] places that this information and
+[32:55] problems are pulled from. And then we
+[32:56] have 20 solution angles for the brand
+[32:59] specifically. We're just using Grooons
+[33:00] here for example. And then it's driving
+[33:02] us different avatars that we actually
+[33:04] have for the brand as well. So, it's
+[33:05] putting together all the avatars for us.
+[33:07] And again, you want to, you know, refine
+[33:10] this to your brand for what actually
+[33:11] fits to you. For this example, I'm just
+[33:13] going to use this. Honestly, this gets
+[33:15] us like 98% of the way there. Usually,
+[33:17] it's just some tweaking. Maybe we remove
+[33:19] one or two avatars in total, but we
+[33:21] usually get really, really good clusters
+[33:23] with just the two prompts that I showed
+[33:26] you right there. And this saves probably
+[33:27] 2 days of work. Also, again, you could
+[33:29] always get it inside the community.
+[33:31] Okay, so I'm just going to copy all of
+[33:33] this from the clustering start. We're
+[33:36] then going to drop this into our code
+[33:38] instance here, and then we're just going
+[33:39] to write avatars.
+[33:41] I should probably understand what I'm
+[33:42] saying here. So, this is a lot of
+[33:44] information. I'm going to make sure
+[33:45] we're using Opus 4.8 high here because
+[33:48] this is going to be pretty critical. And
+[33:50] we just want this to write the skill for
+[33:53] us because then this skill is going to
+[33:55] be referenced later. Again, I'll say
+[33:57] this for the 100th time, this could be
+[33:59] done in a hundred different ways, and
+[34:00] there's probably a more efficient way to
+[34:02] do it. But, I'm just showing you the
+[34:04] easy first step that I would take,
+[34:06] especially if I wasn't 100% comfortable
+[34:08] in here. So, we're just going to easily
+[34:10] just move this through. We're going to
+[34:12] go ahead and send it.
+[34:14] Great. Now that this is done, this only
+[34:16] took a few minutes here. We actually
+[34:17] have the full skill. This is just a
+[34:19] referenceable skill. You could do this
+[34:21] in a few different ways, but we're just
+[34:23] going to go ahead and save this skill.
+[34:25] We can now reference it at any time, or
+[34:26] we could just tell Claude to reference
+[34:29] the skill. Meaning, next time we ask for
+[34:31] copy, or creative or what we should spin
+[34:34] up next, which we're going to do in a
+[34:35] few minutes here, we're actually going
+[34:37] to just be able to say pull up the Gruns
+[34:39] brand skill at any time and it will
+[34:41] reference it. In fact, as we continue to
+[34:43] use the same thread, which we've done a
+[34:46] few times now, it's going to naturally
+[34:48] reference it because it's smart enough
+[34:49] to understand that the skill applies to
+[34:51] the business. So, all of that done here,
+[34:53] we've now connected additional business
+[34:55] information that's going to help with 8,
+[34:57] 9, and 10. This is going to be basically
+[35:00] the groundwork that you could build upon
+[35:02] any time. And by the way, you could add
+[35:04] more information, upgrade your skills at
+[35:06] any time, and it's so easy because all
+[35:08] you need to do is just tell Claude to
+[35:09] upgrade, change, or modify the skill.
+[35:11] Moving on to the next piece here, we
+[35:13] have creative recommendations. This is
+[35:16] going to function very similar to our
+[35:18] winning detection. The only difference
+[35:20] here is we're now going to start to
+[35:21] think about this from a workflow
+[35:23] perspective. And we're going to be
+[35:24] adding a lot more context than we had
+[35:26] previously. I'm just going to ask it,
+[35:28] "Can you pull the top spending ad for me
+[35:30] with the ad ID and link it in Ads
+[35:32] Manager?" Also, can you pull the actual
+[35:34] creative so I can see it? Here's the
+[35:36] great thing. Whenever you ask for
+[35:37] something like, "Can I see it?" that
+[35:39] also should mean in most cases that
+[35:41] Claude can see it, too. We have the Ads
+[35:43] Manager click, so we can click this. We
+[35:45] can then open this up right away inside
+[35:47] of Ads Manager, which is great. We then
+[35:49] also have the live ad preview and then
+[35:51] the video that we can watch on Facebook.
+[35:53] What's really cool about this is at the
+[35:54] bottom here, it noted, "The image above
+[35:56] is a rendered creative, a vertical
+[35:58] before and after split showing XYZ XYZ
+[36:01] XYZ." This is excellent. We know that it
+[36:03] could actually see the ad for us.
+[36:05] Because of this, we now want to use this
+[36:07] workflow to then start to generate more.
+[36:11] This is where things get fun. So, here's
+[36:13] what we're going to build, and it's very
+[36:15] easy. Please build a basic schedule that
+[36:19] pulls exactly this information that you
+[36:21] have above, taking my top spending ads
+[36:24] over the last 14 days. Do this schedule
+[36:27] only once per week and focus on the top
+[36:30] three highest spending ads in the
+[36:33] account. Ignore everything else.
+[36:44] So, all we're building again is a basic
+[36:47] schedule. You're going to see how this
+[36:48] all starts to tie in together here. Now,
+[36:50] while that's working in the background
+[36:52] here, I want to explain the difference
+[36:53] between winners and potential ads. It's
+[36:56] very, very simple. You just need to
+[36:57] define your winning parameters based on
+[37:00] your efficiency metric and as long as
+[37:02] that ad has spent. Typically, we like to
+[37:04] think of winning ads as having a hit
+[37:07] rate. As long as both of these
+[37:08] conditions are met, then it is in fact a
+[37:11] winner. Potential in our case would be
+[37:13] something like 5% of campaign budget,
+[37:16] but missing TROAS or TCPA. Or on the
+[37:19] flip side, hitting TROAS or TCPA, but
+[37:22] less than 5% of the budget. Potential
+[37:24] ads need to be tweaked. Winning ads need
+[37:27] to be replicated. So, the workflow that
+[37:29] we're going to now start to create is
+[37:31] going to be based on these winning and
+[37:33] potential parameters. Keep in mind, I'm
+[37:36] not narrowing down all the edge cases
+[37:38] for every single business. Just in your
+[37:40] case, as long as you're hitting your
+[37:42] specific goals and targets, that's what
+[37:45] you want to build your workflows around.
+[37:47] Back into Claude here, we have our three
+[37:49] ads that we pulled through. From this
+[37:51] stage, we're now going to build on top
+[37:54] of this one last time that's going to
+[37:56] start auto-generating work for us. All
+[37:59] I'm going to say here, again, in plain
+[38:01] English, for any of these top ads that
+[38:04] are image ads, I want you to take the
+[38:07] image preview and build a variety of
+[38:11] dynamic iterations of the same ad. Feel
+[38:14] free to change any component that you
+[38:16] want that you think would be most
+[38:18] important. Don't forget to reference our
+[38:20] brand guidelines skill that we built
+[38:23] together earlier. Every time you create
+[38:26] these new images, I want you to review
+[38:29] them before you send them off to me to
+[38:31] make sure they follow the brand
+[38:33] guidelines avatars, and feel free in a
+[38:36] few of these variations to be unique and
+[38:38] creative. We're not looking for tiny
+[38:40] little tweaks or iterations, we're
+[38:42] looking for moderately big changes based
+[38:44] on an original ad that we already know
+[38:47] drives a lot of spent.
+[38:50] Okay. So, the point of this now is as
+[38:52] you can probably imagine, we're building
+[38:54] workflows. So, our creative
+[38:56] recommendations, right? This is really
+[38:57] easy. This is just building the
+[38:59] foundation of what's going to be
+[39:01] recommended and what's going to be
+[39:02] created in our workflows. Creative
+[39:04] workflows is really where the fun
+[39:06] begins. To put this into perspective,
+[39:08] let's say we have all our winning ads up
+[39:10] top here. What we want to do is every
+[39:12] time there's a winning static ad, we
+[39:15] want to create more iterations. So, we
+[39:16] have the V1, we have the V2, we have the
+[39:19] V3, and so on. And what winds up
+[39:20] happening is this grouping of ads
+[39:24] becomes stronger and stronger with the
+[39:26] winner. Because we have a positive
+[39:27] signal based on high spend and hitting
+[39:30] our target, and it actually expands the
+[39:31] entire ad account, and makes the ad
+[39:33] account more bulletproof. You'll see
+[39:34] less fatigue in the account. It's a very
+[39:36] positive thing that happens. In addition
+[39:38] to our winners, we're also going to have
+[39:39] our potential ads, which we'll call
+[39:41] right here. Now, for our potential ads,
+[39:43] we're going to do the same thing. We're
+[39:44] going to create a V1, a V2, and a V3,
+[39:47] right? And every time we do this, every
+[39:48] time we're creating these new versions,
+[39:49] especially for potential ads, we're
+[39:51] looking for variety. We're not trying to
+[39:54] create the same ad over and over. We're
+[39:56] trying to create different ads. What
+[39:58] you've basically done by just doing this
+[39:59] workflow right here is you have
+[40:01] massively expanded your ad account. You
+[40:03] now have creatives that are flying in on
+[40:05] a regular basis. You're giving these
+[40:07] creatives 14 days to run. You're
+[40:09] analyzing these creatives right here,
+[40:11] and then guess what you're doing? You
+[40:13] are creating more creatives, right? So,
+[40:15] you're constantly building this natural
+[40:17] creative flywheel with your winners and
+[40:20] with your potential ads. Okay, so after
+[40:22] you run this, you're probably going to
+[40:23] notice you run into a big limitation.
+[40:26] That limitation is going to happen
+[40:27] because you have all this context, you
+[40:30] have all of these briefs, but Claude
+[40:32] cannot generate images for you
+[40:34] automatically. It could do so in regular
+[40:36] chat. These images are often very weak.
+[40:38] Claude is not the best image generation
+[40:40] tool. ChatGPT tends to be a bit
+[40:42] stronger. Nano Banana tends to be very
+[40:43] strong as well. Now, this is the point
+[40:45] where you get to customize your
+[40:47] experience based on what you and your
+[40:49] team actually like to use. For example,
+[40:51] my team uses Super Scale primarily. We
+[40:53] used Higgs Field a little bit as well.
+[40:55] And then for static images, we tend to
+[40:57] use Nano Banana Pro. We tend to use Arc
+[40:59] Ads as well. All of these tools can be
+[41:02] used at your own discretion. We are a
+[41:04] large agency. We work with a lot of
+[41:06] brands, and because of that, we have the
+[41:08] capability to use everything under the
+[41:10] sun based on what's the right fit. So,
+[41:12] at this point with the briefs that we've
+[41:14] created here on the right side, we kind
+[41:16] of have an idea of where things can go.
+[41:18] But, as I've mentioned before, we've hit
+[41:20] a clear wall. We're not actually
+[41:22] generating anything, and that's just
+[41:23] because Claude itself is not very good
+[41:26] at generating images or generating
+[41:28] videos. There's some license to do this,
+[41:30] but not too great. There's a whole lot
+[41:32] of other tools that we can use that are
+[41:33] much better. Think of just Claude as
+[41:35] like the brain, the architect for all of
+[41:37] this, and what we're going to use is
+[41:39] other model context protocols, other
+[41:41] MCPs, to tie this all together. So,
+[41:44] keeping this as simple as possible, I'm
+[41:45] going to show you how we set this up in
+[41:47] Super Scale because this is who we use.
+[41:49] So, if you click on Super Scale down
+[41:51] here, where the MCP is, and you
+[41:53] literally just copy this MCP. You can
+[41:55] then go into Claude. You can then go to
+[41:58] your settings in Claude. You can go to
+[42:00] connectors. Click customize right here.
+[42:02] Click the plus button. Add a custom
+[42:04] connector. We'll just call this Super
+[42:05] Scale, and we'll just paste this in. And
+[42:07] once we just click this add button right
+[42:09] here, we're going to have access to
+[42:11] interact with these Super Scale MCP, aka
+[42:14] create images, videos with context using
+[42:17] the brain that we've already created to
+[42:19] actually generate things for us on
+[42:20] repeat. So, I'll just click add. So,
+[42:22] then if we go back to our chat here, we
+[42:23] can prompt in something very simple.
+[42:26] Okay, this is fine. Now, since you can't
+[42:28] generate images on your own, please use
+[42:30] the MCP to build these images for me.
+[42:34] You can go back in the chat, take one of
+[42:36] these prompts, and just build one image
+[42:38] ad for me. I want to use Nano Banana Pro
+[42:41] and build two variations per iteration
+[42:44] that's necessary. Do this all in
+[42:46] vertical formats.
+[42:53] Now, just to show you what's going on
+[42:54] here, we're using Higgs Field for this
+[42:56] job. I could actually specifically tell
+[42:58] it to use Super Scale. I could tell it
+[43:00] to use Higgs Field. I could tell it to
+[43:01] use anything that I've set up. It
+[43:03] doesn't really matter at all. As I said,
+[43:05] I tend to get the best results from
+[43:07] Super Scale, but this is going to just
+[43:08] go really quick. Now, you can see these
+[43:09] images starting to be generated on the
+[43:11] fly here, and just like any AI-generated
+[43:14] image, it's going to pull in in just a
+[43:16] few minutes. Now, really I want us to
+[43:18] understand the workflow of what we just
+[43:19] created here because this is critical.
+[43:22] So, first off, every single time you
+[43:23] have a winning ad in your ad account, we
+[43:25] are creating somewhere around two to
+[43:27] four briefs. These briefs are going to
+[43:29] have context on who our avatars are, and
+[43:31] they're going to be able to look at
+[43:32] historic winners in the ad account, the
+[43:34] images specifically. They're really
+[43:36] going to be able to understand. And then
+[43:37] we're going to pull in those briefs into
+[43:40] either Higgs Field, Super Scale, Arc
+[43:42] Ads, Gemini, whatever tool you like to
+[43:45] use to generate more images. You have
+[43:47] essentially created, as we went over
+[43:49] already, a key creative flywheel. Your
+[43:53] images are now going to be able to
+[43:54] repeat and repeat and repeat based on
+[43:57] what's actually working, and you could
+[43:58] run this technically anytime, although
+[44:00] I'd recommend 7 to 14 days on a
+[44:01] consistent cycle. Okay, so now we've
+[44:03] created an auto-generating image machine
+[44:06] that you could basically prompt on tap
+[44:08] whenever you want and auto schedule it.
+[44:10] What about scripts and briefs? Now,
+[44:12] scripts and briefs are going to be
+[44:13] something that you actually do more on
+[44:15] demand, not necessarily always on a
+[44:17] schedule, but we get also create a
+[44:19] similar workflow for both scripts and
+[44:21] briefs. Now, what I like to do for all
+[44:23] of the briefs that we follow is I like
+[44:24] to create this as a skill as well. So, I
+[44:26] have our UGC creator brief template
+[44:29] here. This is for internal and external.
+[44:32] We like to basically push this all into
+[44:33] one spot so that we get the optimal
+[44:36] output. And even though most of this is
+[44:38] blurred because it's only available
+[44:39] inside of the Facebook Ads Blueprint,
+[44:42] just to give you like one example, we
+[44:44] are crafting individual hooks, we're
+[44:46] crafting individual call-outs, and we're
+[44:48] preparing additional shot lists so that
+[44:51] when we actually get the creative handed
+[44:53] to us, whether it's AI creative, UGC, or
+[44:56] in-house product studio creative, we
+[44:58] know that we're hitting all the marks.
+[45:00] Briefing is critically important. If it
+[45:01] wasn't, everybody wouldn't talk about
+[45:03] it. So, what we like to do is we like to
+[45:05] take this brief just like so. Then we're
+[45:07] going to pop this back into Claude. And
+[45:10] what we're going to run is very simple.
+[45:12] I've just prompted here, build a skill
+[45:13] that could easily be referenced for
+[45:15] scripting video ads. I've then provided
+[45:17] the full template, and then the skill
+[45:19] was then created. Now, anytime I want
+[45:21] to, we could edit this skill, we could
+[45:23] reference this skill, and anytime I want
+[45:25] to create a new script, of course, it
+[45:28] will automatically reference it. For
+[45:29] example, let's say I said, "Using the
+[45:31] Facebook Ads MCP in the account, please
+[45:33] find my top-performing video ad, extract
+[45:37] the transcript, and then using the skill
+[45:41] that you've just made, write a new
+[45:43] script and brief."
+[45:47] So, just like all other workflows that
+[45:49] we've created, you know what's going to
+[45:50] happen now. It's finding the transcript,
+[45:53] it's doing exactly what we did before,
+[45:55] and then it's going to brief in exactly
+[45:57] what we want in our own template that we
+[45:59] can pass to our internal team, to our
+[46:02] designers, to our creators, whomever we
+[46:04] want. This ultimately saves you hours
+[46:06] and hours over time and time and time
+[46:09] and time again that you have to manually
+[46:10] create over and over briefs and briefs
+[46:13] and briefs again. So, at this point you
+[46:14] understand that we've created basic
+[46:16] creative workflows, generating images,
+[46:19] building scripts, building briefs, all
+[46:21] of which could either be auto-generated
+[46:24] for us depending on what tools we're
+[46:25] using, or we can actually just use these
+[46:27] to our advantage to brief creators, and
+[46:30] so on. This is generally the point of
+[46:32] where things are good right now. But, by
+[46:34] the time this video releases, there's
+[46:36] going to be a hundred new things that
+[46:38] come out as there always are. And
+[46:41] because of that, I want you future-proof
+[46:43] where your mindset goes on this because
+[46:46] every week when new advancements come
+[46:48] out, there's going to be more that we
+[46:50] can do. This is the foundation for
+[46:52] everything that you're going to do in
+[46:53] the future. Future workflows are
+[46:55] essentially going to be limitless, but
+[46:57] what I really want you to focus on are
+[46:59] just a few things. So, the core workflow
+[47:01] that we created is finding winning ads,
+[47:03] briefing winning ads, and then of course
+[47:05] using some tool to build more of these
+[47:09] ads. This is all currently done pretty
+[47:11] well with image ads, right? We'd all
+[47:13] agree that right now AI image ads are
+[47:15] pretty great, but when it comes to
+[47:17] video, it's a little iffy. So, what we
+[47:19] like to do from this point forward in
+[47:21] the future workflows that I think are
+[47:22] going to be extremely valuable are how
+[47:24] we take one single brief and multiple
+[47:27] tools to then create video iterations
+[47:31] and image ads all together. So, instead
+[47:33] of just thinking of this as an image ad
+[47:35] briefing, we would potentially take a
+[47:37] winning ad, whether it's an image or a
+[47:40] video, we would then brief into the
+[47:42] tool, but we'd also brief images, and
+[47:44] we'd also brief video, right? And again,
+[47:46] this is just the start of things. So,
+[47:49] maybe we'd have one tool for images and
+[47:50] a different tool for videos. It doesn't
+[47:52] matter. Really, we just want to make
+[47:54] sure on autopilot we're getting our
+[47:56] winning ads, we're briefing in images
+[47:58] and videos. And the cool thing is you're
+[47:59] going to be able to modify the briefs
+[48:01] based on what's necessary for the tool
+[48:03] or for the concept. If it's an image
+[48:06] concept, we know it could be simple,
+[48:08] iterations are really easy to make. If
+[48:10] it's a video concept, then we might need
+[48:11] to pre-prompt, and those are all done
+[48:14] with skills. So, just think of skills as
+[48:17] your intermediary between right here.
+[48:20] So, skills are not the answer to all,
+[48:22] but they're going to be the bridge in
+[48:24] between the creation of the brief and
+[48:26] what you actually get on the output. So,
+[48:28] a skill would typically sit right here.
+[48:31] Now, a skill in many cases is going to
+[48:33] just be this entire workflow, but the
+[48:35] way that we're using skills here is to
+[48:37] interfere and be a buffer between the
+[48:40] brief and the actual output. What this
+[48:42] saves for you is overspending on token
+[48:46] cost, because spending too much on
+[48:47] tokens is going to cost you a fortune in
+[48:50] the long haul, especially if you're
+[48:51] doing this on repeat. If your skills are
+[48:53] better at filtering, you're going to
+[48:55] save on tokens, you're going to produce
+[48:58] better ads with higher hit rates. So,
+[49:00] future workflows that I think are going
+[49:01] to be great are going to be video ads,
+[49:03] custom scripts per platform or tools,
+[49:05] and then I think there's going to be an
+[49:06] entire suite that we eventually layer
+[49:08] into all of this with finance and
+[49:10] inventory. Now, that is TBD at the
+[49:13] moment, there's not as many great
+[49:14] connectors as we would like here.
+[49:15] Shopify does port in, but the
+[49:18] capabilities right now are a bit limited
+[49:20] in terms of the financial role of
+[49:22] everything. Ideally, in the long term,
+[49:23] we create a full ecosystem that allows
+[49:26] us to take the most basic reporting,
+[49:28] integrate that with our creative
+[49:29] workflow, that eventually spits back out
+[49:32] to the finances and the inventory of the
+[49:33] business. On a long-term scale, we're
+[49:35] essentially creating a massive flywheel
+[49:38] in the business that has dozens and
+[49:40] dozens of different components. So,
+[49:42] while you might have your creative
+[49:43] flywheel, for example, you could also
+[49:45] have additional layers in here, for
+[49:47] example, making sure that only this ad
+[49:50] is evaluated if that ad is truly
+[49:52] profitable based on not only the
+[49:55] attribution of the platform, but
+[49:56] profitable based on the unit cost or the
+[49:58] cost of goods or the shipping threshold
+[50:01] or the inventory available. Right? So,
+[50:03] you could see how we're going to
+[50:04] eventually be able to layer on over and
+[50:06] over and over again different things
+[50:08] into the business to make the
+[50:09] decision-making even better. Overall,
+[50:12] the workflow that we've created today is
+[50:14] the foundation and then what you build
+[50:16] on top of this should be custom to your
+[50:18] own business. Okay, before we wrap up, I
+[50:21] want to hit you with some of the
+[50:22] biggest, most critical limitations. Now,
+[50:25] you might be thinking of limitations as
+[50:27] something that is not available today
+[50:28] and it's going to be available tomorrow.
+[50:30] That is one way to think about it, but
+[50:31] think of this more as a red flag. Some
+[50:34] people are going to run with Claude in
+[50:35] the Facebook Ads integration, upload all
+[50:37] their ads tomorrow, they're going to
+[50:38] create massive flywheels, and their ad
+[50:40] accounts are going to get bloated really
+[50:41] quickly. They're going to have a bunch
+[50:42] of crappy ads that don't perform or they
+[50:45] might have a few good ads, but they
+[50:46] never get adequate spend. And this is
+[50:48] going to be a death loop for most
+[50:51] businesses. Tools like this are
+[50:52] fantastic
+[50:54] at enhancing what you're currently
+[50:56] doing. They will make you more efficient
+[50:58] if done right, and if you build your
+[51:00] workflows custom to yourself, they will
+[51:02] really enhance your entire organization.
+[51:04] So, what we do here at The Moon Liters
+[51:06] is we use everything that I just showed
+[51:08] you as a filter, almost like a step one
+[51:11] into just the foundation of the critical
+[51:14] mass or media buying is still very, very
+[51:16] relevant. The most important thing to
+[51:18] understand is that at the end of the day
+[51:19] when it comes to running Facebook Ads,
+[51:21] you're spending thousands and thousands
+[51:23] of dollars, likely of your very own
+[51:25] money, you need to make sure you have a
+[51:27] human filter at the end of that. Just
+[51:30] because everything looks sexy and shiny
+[51:32] right now does not mean that it's the
+[51:34] appropriate thing to do for the business
+[51:36] today. So, be careful, limit yourself,
+[51:39] don't overdo it in your ad account, and
+[51:41] most importantly, do not remove the most
+[51:44] important filter from making sure your
+[51:46] cash is used properly. That is
+[51:49] everything that I'm going through today
+[51:51] in the Claude Meta Ads MCP tutorial.
+[51:54] This is the start of a new era, and if
+[51:57] you want to see everything I just went
+[51:58] through, not only in this format, but
+[52:00] the exact prompts, all of the briefs I
+[52:02] showed you, everything laid out in a
+[52:04] very easy step-by-step version, then
+[52:07] we've added all of this to
+[52:08] school.com/facebook.
+[52:11] You can join there anytime, or if you
+[52:13] want all this handled for you, if you
+[52:14] don't want to ever have to deal with
+[52:15] this, you can go to the
+[52:16] moonlighters.com/apply
+[52:18] to see if you're a fit to work with us.
+[52:20] That's all for today. I hope you got a
+[52:21] ton of value out of this, and I'll see
+[52:22] you in the next one.

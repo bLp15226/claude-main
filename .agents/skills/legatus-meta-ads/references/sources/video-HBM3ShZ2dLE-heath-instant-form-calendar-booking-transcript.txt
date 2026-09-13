@@ -1,0 +1,262 @@
+[00:00] Meta have just added a new feature that
+[00:01] I absolutely love. It's one that I've
+[00:03] wanted for years. It is absolutely going
+[00:05] to change the way that I run meta ads
+[00:07] for my own business. I think it's going
+[00:08] to change the way that you run meta ads
+[00:10] for your business in many cases as well.
+[00:12] And they are introducing embedded
+[00:16] calendar bookings into instant forms.
+[00:18] So, if part of your lead generation
+[00:20] process is people book a call directly
+[00:23] into your calendar, as it absolutely is
+[00:24] with us, if someone's interested in our
+[00:25] agency services, for example, they will
+[00:27] book a slot into our calendar. that's
+[00:29] how they become a lead. You no longer
+[00:31] have to send people through to your
+[00:33] website. You can do so through instant
+[00:35] forms. I'll get into how it works and
+[00:37] what it looks like in a second. But I
+[00:39] think this is a really big deal for
+[00:41] those of us that are running meta ads
+[00:43] because we want to generate leads. When
+[00:45] you get people to book a call directly
+[00:46] into your calendar, the lead quality is
+[00:48] nearly always significantly better than
+[00:50] if you are just getting them to fill out
+[00:52] information in a contact form or via an
+[00:55] instant form and then you're trying to
+[00:56] reach out to those people. Once they
+[00:57] book in a slot, they're far more likely
+[00:59] to show up. You're far more likely to
+[01:00] make contact and therefore you are much
+[01:01] more likely to convert that lead. And we
+[01:04] often had the tradeoff previously of do
+[01:07] I send people through to my website, get
+[01:09] them to book a call directly on my
+[01:10] calendar, which is likely to be
+[01:12] expensive, I'm not going to get anywhere
+[01:13] near as many leads. Or do I get people
+[01:16] to stay on Facebook, stay on Instagram,
+[01:18] click the ad, be presented with an
+[01:20] instant form, enter in that information,
+[01:22] and then I will try and reach out to
+[01:24] those people and convert them. Those
+[01:25] leads are going to be much cheaper, but
+[01:27] the quality is going to be tough. Me or
+[01:29] my team, whoever is doing it, is going
+[01:30] to waste a lot of time with that. This
+[01:32] is the perfect hybrid solution. We can
+[01:34] do what Meta wants, which is keep people
+[01:36] on platform, but we can also get what we
+[01:39] want, which is higher quality leads,
+[01:41] people with with more intent. Right? So,
+[01:43] this is what it looks like. We've got a
+[01:45] little bit of a demo on Meta's sort of
+[01:47] support doc. They made an announcement
+[01:49] about this to show how it works. Okay,
+[01:51] so here's how it works. People will fill
+[01:53] out the instant form as they usually
+[01:54] would. So they'll provide their contact
+[01:56] information and then we get to the end
+[01:57] screen. You can see here they can then
+[01:59] click through. You can see this is um
+[02:01] scheduled provided by Calendarly. So we
+[02:02] use Calendarly as a business. I know a
+[02:04] lot of you will as well. The initial
+[02:06] options for this feature are calendarly
+[02:08] and high level which is going to cover a
+[02:10] lot of people that are generating leads
+[02:12] via meta ads and doing so through a book
+[02:14] a slot into my calendar process. So
+[02:16] yeah, very simple process. They you
+[02:18] still get the contact information. So if
+[02:19] people don't go through and take that
+[02:21] step, you still have the lead. So you
+[02:23] can still reach out to them, which again
+[02:25] I really like because unless you've got
+[02:27] quite sophisticated software set up, if
+[02:29] you're sending people through to your
+[02:30] website and they enter their name, email
+[02:31] address, but don't actually make it all
+[02:33] the way through to booking a slot in the
+[02:35] calendar, well, you're not going to get
+[02:37] that lead. With this, you get that
+[02:39] initial contact information. You've got
+[02:40] another chance at getting in touch with
+[02:42] them and converting that prospect. So
+[02:44] they then click through from the ending
+[02:45] of the instant form through to being
+[02:47] able to book that slot and and like I
+[02:49] said all the advantages that that come
+[02:51] with that. There a couple of things to
+[02:53] know about this feature. So the
+[02:55] information that they fill in terms of
+[02:57] like name, email address as part of the
+[02:58] instant form that will be automatically
+[03:02] fed through to the calendar booking. So
+[03:04] they don't have to re-enter their
+[03:05] contact information which is great. We
+[03:07] know that less friction when it comes to
+[03:09] lead generation equals more leads, lower
+[03:12] cost per lead. So, I really like that
+[03:14] they've got that. I think that that's
+[03:16] probably why Meta have only integrated a
+[03:19] couple of providers when it comes to
+[03:20] calendar booking options for now, so
+[03:22] they can make sure that that process is
+[03:24] in place. If they were to just open it
+[03:26] up, they wouldn't be able to do that.
+[03:27] So, so I think that's a a really good
+[03:29] setup. It's also really easy to set up,
+[03:32] right? There's no technical integration
+[03:34] required. Nothing complicated that can
+[03:36] make this difficult. When you're going
+[03:38] through your campaign creation process,
+[03:40] you create a lead campaign. You select
+[03:41] the instant form at the ads set level.
+[03:43] And then once you're at the ad level
+[03:45] where you're creating your instant form,
+[03:46] you enter in the information as you
+[03:47] usually would, but in the ending, you've
+[03:49] got additional actions, select book
+[03:51] time, then entering youruling link. And
+[03:53] it looks like this, right? So you can
+[03:54] see you fill out the rest information on
+[03:56] the form, additional action, book time,
+[03:59] and then enter in your scheduling link.
+[04:01] In this case, it's a calendarly link.
+[04:03] Call to actions book now. And then
+[04:04] again, there's a demo over here to show
+[04:06] what that looks like. Not all ad
+[04:08] accounts have this yet. Meta do this
+[04:11] with all new features where they start
+[04:12] with some ad accounts. They test it,
+[04:14] make sure it works, and then they look
+[04:15] to to roll it out. We've got it in some
+[04:17] ad accounts, but but not all. The way
+[04:19] you check to see if you've got it is
+[04:20] exactly this. Go and create a new
+[04:22] instant form. It won't be added after
+[04:25] the fact your existing ones. You have to
+[04:26] create a new one. And then go to
+[04:27] additional action and simply, do you
+[04:29] have book time? But I absolutely expect
+[04:30] this to be rolled out very quickly
+[04:32] across accounts because I think it's
+[04:34] going to be a really useful feature and
+[04:36] it's really going to solve that issue
+[04:38] that a lot of us advertisers have that
+[04:40] trade-off between lead quality and lead
+[04:41] quantity. I think with this we're going
+[04:43] to have the best of both worlds. So when
+[04:44] we're running ad campaigns going forward
+[04:46] for our own agency or other offers where
+[04:49] people do book into a calendar, I really
+[04:50] like that process. We are now going to
+[04:52] be doing so through instant forms as
+[04:54] opposed to sending them through to the
+[04:55] website. That is I'm absolutely certain
+[04:57] that is going to reduce our cost per
+[04:59] lead and generate more leads for us,
+[05:01] which is brilliant. Now, there are a
+[05:02] couple of things to note, particularly
+[05:03] if you haven't used that lead generation
+[05:06] process before where people book slots
+[05:07] directly into your calendar, is that
+[05:09] often you're going to want to introduce
+[05:11] some friction to make sure that your
+[05:14] time or your sales team time isn't being
+[05:16] wasted with lower quality leads. What I
+[05:18] would typically advise is that you don't
+[05:20] add friction in initially. So, run the
+[05:22] ad campaign, make it really easy for
+[05:23] leads to come through. That's going to
+[05:24] get you more conversion volume, which is
+[05:26] going to allow Meta to learn and
+[05:28] optimize. A lot of businesses that
+[05:29] generate leads via the Meta ad
+[05:31] campaigns, they don't generate 50 plus
+[05:33] leads a week, which is ideally what Meta
+[05:35] wants to be able to optimize. So, the
+[05:37] closer we can get to that, the better
+[05:38] from a conversion volume standpoint. So,
+[05:40] no friction to start with. But if you
+[05:42] consistently see that people are booking
+[05:44] slots into your calendar and they're low
+[05:46] quality, they're not showing up, or
+[05:47] maybe they just don't meet the criteria.
+[05:49] For example, with our agency, people
+[05:51] need to have a certain budget in order
+[05:53] to be able to work with us. If they
+[05:54] don't meet the criteria, they can't book
+[05:56] a slot into our calendar. So, you might
+[05:58] want to go ahead and set something like
+[05:59] that up if you are seeing that as a
+[06:01] problem. So, something to be aware of,
+[06:02] particularly for those of you that
+[06:03] aren't familiar with Kalinand based uh
+[06:06] uh lead funnels. But once you've got
+[06:08] that in place, I really like them. I
+[06:09] think they're a really efficient quality
+[06:11] way to generate leads. So, there are
+[06:12] also a couple of things that Meta are
+[06:14] advising us to watch out for if we use
+[06:16] this new feature. So, firstly, keep your
+[06:18] calendar up to date. Sounds like an
+[06:19] obvious silly thing to say, but if you
+[06:21] have people booking slots into your
+[06:23] calendar and it's not properly
+[06:24] integrated with other things and those
+[06:26] slots aren't available, like you can run
+[06:28] into to all sorts of issues. So, if you
+[06:29] are going to do that, just make sure you
+[06:30] you set some time aside to sort that out
+[06:33] or have a recurring task where you're
+[06:34] like, "Yeah, okay, going to make sure I
+[06:36] can actually take those calls or my team
+[06:37] can actually take those calls." Metro
+[06:38] also advising using a clear CTA, a call
+[06:40] to action that's a bit different from
+[06:42] what you typically use at the end of an
+[06:44] instant form. So, they've gone with book
+[06:46] time as a call to action text. Um, you
+[06:49] could have something like schedule a
+[06:50] demo, book a consultation, like whatever
+[06:53] that next step is that's more
+[06:55] appropriate for for your service and uh
+[06:57] and for your offering. And they also
+[07:00] talk about the fact that you want to
+[07:01] take advantage of the reminders and the
+[07:02] follow-ups that you can use. So, you
+[07:04] could have people book in. Again, this
+[07:05] is a potential solution if you are
+[07:07] seeing issues with lead quality where
+[07:10] people can book in and then you can
+[07:12] follow up with SMS. For example, if
+[07:14] people don't verify and don't say, "Yes,
+[07:15] I will attend or something along those
+[07:17] lines," then you can go ahead and cancel
+[07:19] that appointment and then free up that
+[07:21] slot for someone else who may well do
+[07:23] those uh do those things. And they've
+[07:25] given us some information about what's
+[07:26] likely to happen with this feature. So,
+[07:27] like I said, some ad accounts have
+[07:29] already got it. It's being rolled out on
+[07:31] Facebook at the moment, not across the
+[07:34] board, but global availability is
+[07:36] expected in October, so not too far in
+[07:39] the future. And they're obviously going
+[07:40] to add in other partners as well. So,
+[07:42] they're expecting that in early August,
+[07:45] uh, we're going to be able to use this
+[07:46] with HubSpot, not just Calendarly and
+[07:49] High Lee, which is what they've started
+[07:50] with. So, this is a great new feature.
+[07:52] You should definitely give it a go if
+[07:53] it's appropriate for your business. And
+[07:54] I know that Meta are going to be
+[07:56] releasing loads of new features over the
+[07:58] next few weeks and months.
