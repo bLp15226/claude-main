@@ -12,6 +12,26 @@ dist
 dist-ssr
 dev-dist
 *.local
+build/
+
+# Supabase CLI scratch. `supabase link` fails on this OneDrive folder and
+# leaves .temp behind (see CLAUDE.md operational gotchas). linked-project.json
+# holds the project ref only — no secret — but it is machine-local either way.
+supabase/.temp/
+
+# Remote Control connectivity probe, not a deliverable.
+rc-test.txt
+
+# Codex mirror — REMOVED 2026-09-13, archived at c945ebc.
+# `.agents/` + AGENTS.md were a hand-maintained second copy of the PHC skill
+# stack. It drifted ~4 weeks (scriptor 2 releases behind, vitruvius absent)
+# and lost the product-page gate entirely — no Augur avatar block, no Scriptor
+# chain — making it a live doctrine-bypass path for anything driven off it.
+# Ignored so it cannot silently reappear. If Codex ever comes back it gets a
+# sync-from-.claude step and a preflight CHECK 6, NOT a hand-maintained copy —
+# at which point delete these two lines deliberately, don't work around them.
+.agents/
+AGENTS.md
 
 # Secrets — never commit real env files
 .env
