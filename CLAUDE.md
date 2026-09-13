@@ -33,41 +33,35 @@ The Three Laws:
 
 **Failure modes to watch for:** state-laundering, superlative inversion, stale value syndrome, premature capitulation, effort theater.
 
-## The PHC generals — roster of record (added 2026-07-23)
+## The PHC generals — where the roster lives (demoted 2026-09-13)
 
-**Disk is the source of truth: `.claude/skills/` + `.claude/skills/INDEX.md`.** Any
-roster stated from memory — Ben's or Aurelius's — is advisory and must be checked
-against disk before acting on it. (Provenance: on 2026-07-23 a from-memory roster
-nearly ordered the purge of two installed skills built four days earlier.)
+**There is exactly one roster of record: `.claude/skills/INDEX.md`, checked against
+`.claude/skills/` on disk.** Not this file. Not memory. Not a list in a prompt.
 
-**Built and installed** (folder · owns · built):
-- **Scriptor** — `.claude/skills/scriptor/` — all customer-facing sales copy; the doctrine stack lives in its references/ — pre-2026-07-03 (v2.2 as of 07-23)
-- **Augur** — `.claude/skills/augur-research/` — customer research, avatars, congregation maps — 2026-07-03 (v2.0.0 07-19)
-- **Herald** — `.claude/skills/herald-social/` — organic social, three locked pillars — 2026-07-03
-- **Legatus** — `.claude/skills/legatus-meta-ads/` — attended Meta Ads diagnosis + media buying; owns shared definitions (king goal, winner/potential, promo exclusion) — 2026-07-03 (v1.2.0 07-19)
-- **Centurion** — `.claude/skills/centurion-store-health/` — store health, checkout integrity — 2026-07-03
-- **Faber** — `.claude/skills/faber-creative-flywheel/` — the performance→creative flywheel: briefs off Legatus's winners/potentials, bloat guard, no fabricated proof — 2026-07-19 (v1.1.0)
-- **Vigil** — `.claude/skills/vigil-ads-monitor/` — unattended scheduled ad-account monitoring; reports, never diagnoses or mutates — 2026-07-19
-- **Beowulf** — `.claude/skills/beowulf-product-scouting/` — product scouting/validation before a
-  product gets a store slot or ad budget; three-box test, free organic demand evidence, 3x landed-cost
-  check, TEST/KILL/PARK verdicts — **corrected 2026-08-04: this is installed and live.** It was listed
-  as "staged, not yet installed" here and in `INDEX.md` until the `/watch` routing guard halted an
-  intake over the discrepancy. Disk beats docs — a directory with a loading `SKILL.md` is installed.
+This section used to carry a full roster with version numbers. It was stripped on
+2026-09-13 by Aurelius ruling because it had become the stalest of three competing
+rosters — it listed Scriptor at v2.2, Augur at v2.0.0, Legatus at v1.2.0 and Faber at
+v1.1.0 while disk read v2.9.0, v2.4.1, v1.3.0 and v1.4.0. The file asserting "disk is
+the source of truth" was the file violating it. **The numbers were not updated here,
+deliberately — updating them only restarts the same decay clock.**
 
-**Build tools, not generals** (no Roman rank, no persona): `video-to-hat` (07-19),
-`shopify-theme-editor` (07-03), the `/watch` intake command (07-23).
+**How to get the roster, every time:**
+1. Read `.claude/skills/INDEX.md` — it carries every installed skill, its version, its
+   lane, and a "Not live skills" section accounting for everything else under
+   `.claude/skills/` so a disk-vs-index diff comes back clean.
+2. If anything is load-bearing, confirm it against disk: the `version:` line in each
+   `.claude/skills/<folder>/SKILL.md` is ground truth, and a directory containing a
+   loading `SKILL.md` is installed regardless of what any document says.
 
-**Staged / named but unbuilt:**
-- **Artifex** — creative production — unbuilt; *retirement recommended 2026-07-23
-  (scope largely absorbed by Faber), Ben to rule*
-- **Praetorian** — account hygiene / ban-risk guard — unbuilt
-
-**Sketched only:**
-- **Censor** — analytics/measurement ledger — gated on 60 days of live data; lane
-  overlaps Vigil, scope narrowing under review 2026-07-23
-- **Vesta** — customer care (charter: karbo doctrine §2.7)
-- **Quaestor** — finance, pricing math, CAC/LTV
-- **Praefectus** — named by Ben; no lane documented in the repo yet
+**Three provenance notes, kept because each one was expensive:**
+- **2026-07-23** — a from-memory roster nearly ordered the purge of two skills built
+  four days earlier.
+- **2026-08-04** — Beowulf was documented here and in `INDEX.md` as "staged, not yet
+  installed" while it was live on disk; the `/watch` routing guard halted an intake over
+  the discrepancy. **Disk beats docs.**
+- **2026-09-13** — a working roster held "Praetorian has no definition at all" while
+  `_staging/praetorian/` held an open, fired watch-log entry. Same failure shape, third
+  time. This demotion is the structural fix.
 
 (**Aurelius** is not a skill — it's the operating layer of this file: the advisor
 voice, the Three Laws, sign-off authority.)
@@ -258,6 +252,19 @@ id-deduped realtime `subscribe()`.
   … supabase\.temp`). Skip `link`; pass `--project-ref fraihyghvkrzkbmxqfil` on
   every CLI command. `supabase init` already ran.
 - **Keep repo side-effects out of `setState` updaters** — StrictMode double-invokes.
+- **Third-party skills and code from external links — STANDING RULE, locked 2026-09-09.**
+  **No third-party skill, MCP connector, or code fetched from an external link ever runs without
+  a vetting pass and explicit per-use approval. Auto-mode with approvals off is never acceptable
+  for an unvetted source, full stop.** Vetting means reading what the file actually does before it
+  runs, not after. If a workflow's instructions are "download this and run it in auto mode,"
+  reproduce the behaviour from the description instead of running the file.
+  *Closes two open flags as one rule:* the Max Fusion MCP that auto-installed unreviewed skills
+  into `.claude/skills/` (Karolis intake, FLAG 2, open since 2026-07-28) and the Metics Media
+  workflow that downloads an unvetted skill from a Drive link and runs it with the permission gate
+  disabled (2026-09-09). Same risk shape twice: unreviewed third-party instructions given
+  file-system access with approvals suppressed. The governance cost is specific — PHC's skill
+  stack is hand-authored, versioned, changelogged and roster-guarded, and anything written into it
+  un-reviewed is indistinguishable at a glance from real doctrine.
 
 ## Next step
 1. Verify Goals/Tasks CRUD live in-browser on Business + Family (add goal + task,
