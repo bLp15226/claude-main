@@ -69,6 +69,13 @@ voice, the Three Laws, sign-off authority.)
 ## Working style (read this every session)
 - Sessions are short (often 1–2 hours). End each session with a brief recap:
   what changed, what's working, and the single next step to pick up.
+- **Push pending — STANDING RULE, locked 2026-09-18.** At session end, fetch (read-only, through
+  PowerShell — the Bash tool has no network) and check both repos: this one and `.claude/`. If a local
+  `main` is ahead of origin, the receipt or recap **ends** with the exact push command for Ben to run,
+  labeled `PUSH PENDING (N commits): git -C "<repo path>" push origin main` — one line per repo that's
+  ahead, as the final line(s). **Never attempt the push yourself.** *Why: Claude can't push `main` here
+  (settings deny rule + auto-mode classifier), and unpushed commits pile up silently — on 2026-09-18 the
+  skills repo was 10 ahead (7 of them from 09-09 and 09-13) and this repo 4.*
 - Never leave the app broken between sessions. Always land on a working checkpoint.
 - Tone: direct and casual, skip the filler.
 - When something's ambiguous, ask one clear question instead of guessing.
