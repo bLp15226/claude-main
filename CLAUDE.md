@@ -259,6 +259,14 @@ id-deduped realtime `subscribe()`.
   … supabase\.temp`). Skip `link`; pass `--project-ref fraihyghvkrzkbmxqfil` on
   every CLI command. `supabase init` already ran.
 - **Keep repo side-effects out of `setState` updaters** — StrictMode double-invokes.
+- **Source material — paraphrase by default. STANDING RULE, locked 2026-09-20.**
+  **Never archive or reproduce a creator's full transcript or captions.** `/watch` stores a source record
+  instead — video ID, URL, caption count, the re-fetch line — and all 24 pre-existing archives were
+  converted to that format on this ruling. The extractions and findings built from them stay; those are
+  PHC's paraphrase and analysis. In doctrine and in chat: **paraphrase by default, and quote only where
+  the exact wording is load-bearing** — a formula, a named setting, a claim whose phrasing is the point —
+  **under 15 words, attributed.** Short quotes already in doctrine filed through 2026-09-18 stand as they
+  are; they are not swept.
 - **Third-party skills and code from external links — STANDING RULE, locked 2026-09-09.**
   **No third-party skill, MCP connector, or code fetched from an external link ever runs without
   a vetting pass and explicit per-use approval. Auto-mode with approvals off is never acceptable
